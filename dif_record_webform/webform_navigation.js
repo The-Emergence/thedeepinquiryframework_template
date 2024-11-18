@@ -1,4 +1,4 @@
- // webform_navigation.js
+// webform_navigation.js
 
 // Handle navigation based on dropdown selection
 document.addEventListener('DOMContentLoaded', function () {
