@@ -1,1 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Participant Form</title>
+  <link rel="stylesheet" href="webform.css">
+</head>
+<body>
+  <div class="dif-webform-container">
+    <h1 class="dif-webform-title">Participant Record Form</h1>
 
+    <form id="participant-form" action="/submit" method="POST">
+      <!-- Fields specific to Participant -->
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="person_name" class="dif-webform-input" required>
+      </div>
+      <div class="form-group">
+        <label for="focus">Primary Focus Area:</label>
+        <input type="text" id="focus" name="focus" class="dif-webform-input" placeholder="e.g., Machine Learning, Mental Health">
+      </div>
+      <div class="form-group">
+        <label for="tags">Tags/Words:</label>
+        <input type="text" id="tags" name="tags" class="dif-webform-input" placeholder="Separate tags with commas">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="dif-webform-submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
