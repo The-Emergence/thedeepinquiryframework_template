@@ -1,69 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DIF Web Form</title>
-  <link rel="stylesheet" href="webform.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIF Webform</title>
+    <link rel="stylesheet" href="webform-styles.css"> <!-- Reference to the separate CSS file -->
 </head>
 <body>
-  <div class="dif-webform-container">
-	<h1 class="dif-webform-title">Deep Inquiry Framework Web Form</h1>
+    <div class="webform-container">
+        <h1>Deep Inquiry Framework (DIF) Data Entry</h1>
 
-	<form id="dif-webform" action="/submit" method="POST">
- 	 
-  	<!-- Record Type Selection -->
-  	<div class="form-group">
-    	<label for="record-type">I am:</label>
-    	<select id="record-type" name="record_type" class="dif-webform-input">
-      	<option value="participant">Participant</option>
-      	<option value="curator">Curator</option>
-    	</select>
-  	</div>
+        <!-- User Role Section -->
+        <div class="form-section">
+            <label for="role">Select Your Role:</label>
+            <select id="role" name="role">
+                <option value="participant">Participant</option>
+                <option value="curator">Curator</option>
+            </select>
+        </div>
 
-  	<!-- Name -->
-  	<div class="form-group">
-    	<label for="name">Full Name:</label>
-    	<input type="text" id="name" name="person_name" class="dif-webform-input" required>
-  	</div>
+        <!-- Subject Words Section -->
+        <div class="form-section">
+            <h2>Add Subject Words</h2>
+            <p>Subjects define the main entity or topic (e.g., "The Sky").</p>
+            <input type="text" id="subject-word" name="subject-word" placeholder="Add a subject word (e.g., 'The Sky')">
+            <button type="button" id="add-subject-word">Add Word</button>
+            <div id="subject-words-list" class="word-list"></div>
+        </div>
 
-  	<!-- Email -->
-  	<div class="form-group">
-    	<label for="email">Email Address:</label>
-    	<input type="email" id="email" name="email" class="dif-webform-input" required>
-  	</div>
+        <!-- Predicate Words Section -->
+        <div class="form-section">
+            <h2>Add Predicate Words</h2>
+            <p>Predicates describe the relationship or action (e.g., "Has the Color").</p>
+            <input type="text" id="predicate-word" name="predicate-word" placeholder="Add a predicate word (e.g., 'Has the Color')">
+            <button type="button" id="add-predicate-word">Add Word</button>
+            <div id="predicate-words-list" class="word-list"></div>
+        </div>
 
-  	<!-- Phone -->
-  	<div class="form-group">
-    	<label for="phone">Phone Number:</label>
-    	<input type="tel" id="phone" name="phone" class="dif-webform-input">
-  	</div>
+        <!-- Object Words Section -->
+        <div class="form-section">
+            <h2>Add Object Words</h2>
+            <p>Objects represent the result, characteristic, or secondary entity (e.g., "blue").</p>
+            <input type="text" id="object-word" name="object-word" placeholder="Add an object word (e.g., 'blue')">
+            <button type="button" id="add-object-word">Add Word</button>
+            <div id="object-words-list" class="word-list"></div>
+        </div>
 
-  	<!-- Focus -->
-  	<div class="form-group">
-    	<label for="focus">Primary Focus Area:</label>
-    	<input type="text" id="focus" name="focus" class="dif-webform-input" placeholder="e.g., Machine Learning, Mental Health">
-  	</div>
+        <!-- Submit Section -->
+        <div class="form-section">
+            <button type="submit" id="submit-form">Submit</button>
+        </div>
+    </div>
 
-  	<!-- Call to Action -->
-  	<div class="form-group">
-    	<label for="call-to-action">Call to Action:</label>
-    	<input type="text" id="call-to-action" name="call_to_action" class="dif-webform-input" placeholder="e.g., Ask for Help">
-  	</div>
-
-  	<!-- Tags -->
-  	<div class="form-group">
-    	<label for="tags">Tags/Words:</label>
-    	<input type="text" id="tags" name="tags" class="dif-webform-input" placeholder="Separate tags with commas">
-  	</div>
-
-  	<!-- Submit Button -->
-  	<div class="form-group">
-    	<button type="submit" class="dif-webform-submit">Submit</button>
-  	</div>
-	</form>
-  </div>
-</body>
-</html>
-
-
+    <script>
+        // JavaScript to dynamically add words to the lists
+        const addWord = (inputId, listId) => {
+            const input = document.getElementById(inputId);
+            const word = input.value.tri
