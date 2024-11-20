@@ -1,7 +1,3 @@
-dynamicForm.js
-
-updated 11/2024 9:53 am
-
 // Form configuration for each record type
 const formConfig = {
 	participant: [
