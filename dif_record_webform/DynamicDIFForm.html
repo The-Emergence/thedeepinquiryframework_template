@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic DIF Form</title>
+</head>
+<body>
+    <form id="dynamicForm">
+        <label for="recordType">Select Record Type:</label>
+        <select id="recordType" name="recordType">
+            <option value="">-- Select --</option>
+            <option value="participant">Participant</option>
+            <option value="provider">Provider</option>
+            <option value="product">Product</option>
+            <option value="insight">Insight</option>
+        </select>
+
+        <div id="formFields">
+            <!-- Dynamic fields will be injected here -->
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+    <script src="dynamicForm.js"></script>
+</body>
+</html>
