@@ -1,0 +1,79 @@
+/* Basic tile styling */
+.tile {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    background: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Badge styling */
+.category-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #2a9d8f;
+    border-radius: 4px;
+}
+
+/* Word styles */
+.word {
+    margin: 5px 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Individual word categories */
+.subject {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2a9d8f;
+}
+
+.predicate {
+    font-size: 16px;
+    font-weight: normal;
+    color: #e76f51;
+}
+
+.object {
+    font-size: 14px;
+    font-weight: normal;
+    color: #264653;
+}
+
+.type {
+    font-size: 12px;
+    font-weight: lighter;
+    color: #f4a261;
+}
+
+.subtype {
+    font-size: 12px;
+    font-weight: lighter;
+    color: #e9c46a;
+}
+
+.relationship {
+    font-size: 14px;
+    font-weight: bold;
+    color: #457b9d;
+}
+
+/* Hover effect for better visibility */
+.tile:hover {
+    background: #fff;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
