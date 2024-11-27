@@ -31,7 +31,7 @@
 
 /* Grouping text styling for bottom alignment */
 .tile .text-group {
-    margin-bottom: 10px; /* Adds spacing from the bottom */
+    margin-bottom: 15px; /* Adds spacing from the bottom */
     display: flex;
     flex-direction: column;
     align-items: center;
