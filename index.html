@@ -1,75 +1,641 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deep Inquiry Framework Template</title>
-    <meta name="description" content="Thumbnail Grid with Expanding Preview" />
-    <meta name="keywords" content="thumbnails, grid, preview, google image search, jquery, image grid, expanding, preview, portfolio" />
-    <meta name="author" content="Codrops" />
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" type="text/css" href="css/default.css" />
-    <link rel="stylesheet" type="text/css" href="css/component.css" />
-    <link rel="stylesheet" type="text/css" href="css/tile.css" />
-    <link rel="stylesheet" href="css/attractor.css">
-    <script src="js/modernizr.custom.js"></script>
-</head>
-<body>
-    <div class="container">    
-        <header class="clearfix">
-            <h1>Deep Inquiry Framework Template<span>Attractor | Contribute</span></h1>    
-        </header>
-        <div class="main">
-            <ul id="og-grid" class="og-grid">
-                <!-- Add existing tiles here -->
-                <li>
-                    <a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/MHA_police_full.png" data-title="Sgt. Redmond Gary" data-description="He goes by Red and in addition to patrolling the streets of Lafayette, Red holds an Associates Degree from LSU in Behavioral Health and has a knack for listening. Red was born and raised in Lafayette and is dedicated to not only keeping his community safe but to look for opportunities to engage with those struggling with their Mental Health to help empower them for a brighter future.<br><br>Words: Serve, Protect, Trust, Community<br><br>Access Private Exchange | Share with others">
-                        <div class="tile">
-                            <div class="person-badge">Person</div>
-                            <div class="text-group">
-                                <div class="word subject">Subject</div>
-                                <div class="word predicate">Predicate</div>
-                                <div class="word object">Object</div>
-                                <div class="word type">Type</div>
-                                <div class="word subtype">Subtype</div>
-                                <div class="word relationship">Relationship</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <!-- Add more tiles as necessary -->
-            </ul>
+	<head>
+    	<meta charset="UTF-8" />
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<title>Deep Inquiry Framework Template</title>
+    	<meta name="description" content="Thumbnail Grid with Expanding Preview" />
+    	<meta name="keywords" content="thumbnails, grid, preview, google image search, jquery, image grid, expanding, preview, portfolio" />
+    	<meta name="author" content="Codrops" />
+    	<link rel="shortcut icon" href="../favicon.ico">
+    	<link rel="stylesheet" type="text/css" href="css/default.css" />
+    	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<link rel="stylesheet" type="text/css" href="css/tile.css" />    
+    	<link rel="stylesheet" href="CSS/attractor.css">
+    	<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+    	<div class="container">    
+        	<header class="clearfix">
+            	<h1>Deep Inquiry Framework Template<span>Attractor | Contribute</span></h1>    
+        	</header>
+        	<div class="main">
+            	<ul id="og-grid" class="og-grid">
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/MHA_police_full.png" data-title="Sgt. Redmond Gary" data-description="He goes by Red and in addition to patrolling the streets of Lafayette, Red holds an Associates Degree from LSU in Behavioral Health and has a knack for listening. Red was born and raised in Lafayette and is dedicated to not only keeping his community safe but to look for opportunities to engage with those struggling with their Mental Health to help empower them for a brighter future.<br><br>Words: Serve, Protect, Trust, Community<br><br>Access Private Exchange | Share with others">
 
-            <!-- Attractor links -->
-            <div id="attractor-links">
-                <div class="attractor-link" data-content="Attractor content for Mental Health">
-                    Mental Health
-                </div>
-                <div class="attractor-link" data-content="Attractor content for Upskilling">
-                    Upskilling
-                </div>
-                <div class="attractor-link" data-content="Attractor content for Guitar Amps">
-                    Guitar Amps
-                </div>
-            </div>
+<div class="tile">
+	<div class="person-badge">Person</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
 
-            <!-- Attractor Expander -->
-            <div id="attractor-expander">
-                <span class="close-expander">X</span>
-                <div class="expander-content"></div>
-            </div>
-        </div>
-    </div><!-- /container -->
-
-    <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="js/grid.js"></script>
-    <script src="js/attractor.js"></script>
-    <script>
-        $(function() {
-            Grid.init();
-        });
-    </script>
-</body>
+           	 
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/2.jpg" data-title="Veggies sunt bona vobis" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+                        	<div class="tile">
+	<div class="provider-badge">Provider</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/3.jpg" data-title="Dandelion horseradish" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+                        	<div class="tile">
+	<div class="insight-badge">Insight</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/MHA_police_full.png" data-title="Sgt. Redmond Gary" data-description="He goes by Red and in addition to patrolling the streets of Lafayette, Red holds an Associates Degree from LSU in Behavioral Health and has a knack for listening. Red was born and raised in Lafayette and is dedicated to not only keeping his community safe but to look for opportunities to engage with those struggling with their Mental Health to help empower them for a brighter future.<br><br>Access Private Exchange | Share with others">
+   <div class="tile">
+	<div class="product-badge">Product</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/2.jpg" data-title="Veggies sunt bona vobis" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+                        	<div class="tile">
+	<div class="person-badge">Person</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/3.jpg" data-title="Dandelion horseradish" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+                        	<div class="tile">
+	<div class="provider-badge">Provider</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/MHA_police_full.png" data-title="Azuki bean" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+    	<div class="tile">
+	<div class="insight-badge">Insight</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/2.jpg" data-title="Veggies sunt bona vobis" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+                        	<div class="tile">
+	<div class="product-badge">Product</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="ihttps://paulduplantis.github.io/DIF_record_expander_test/images/3.jpg" data-title="Dandelion horseradish" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+                        	<div class="tile">
+	<div class="person-badge">Person</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/MHA_police_full.png" data-title="Azuki bean" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+<div class="tile">
+	<div class="provider-badge">Provider</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/2.jpg" data-title="Veggies sunt bona vobis" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+                 	<div class="tile">
+	<div class="insight-badge">Insight</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/3.jpg" data-title="Dandelion horseradish" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+                	<div class="tile">
+	<div class="product-badge">Product</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/MHA_police_full.png" data-title="Azuki bean" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+	<div class="tile">
+	<div class="person-badge">Person</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/2.jpg" data-title="Veggies sunt bona vobis" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+                        	<div class="tile">
+	<div class="provider-badge">Provider</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/3.jpg" data-title="Dandelion horseradish" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+                        	<div class="tile">
+	<div class="insight-badge">Insight</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/MHA_police_full.png" data-title="Azuki bean" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot.">
+ <div class="tile">
+	<div class="product-badge">Product</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/2.jpg" data-title="Veggies sunt bona vobis" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+                        	<div class="tile">
+	<div class="person-badge">Person</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/3.jpg" data-title="Dandelion horseradish" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+                        	<div class="tile">
+	<div class="provider-badge">Provider</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/MHA_police_full.png" data-title="Azuki bean" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+	<div class="tile">
+	<div class="insight-badge">Insight</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/2.jpg" data-title="Veggies sunt bona vobis" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+                        	<div class="tile">
+	<div class="product-badge">Product</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/3.jpg" data-title="Dandelion horseradish" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+                        	<div class="tile">
+	<div class="person-badge">Person</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/MHA_police_full.png" data-title="Azuki bean" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+<div class="tile">
+	<div class="provider-badge">Provider</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/2.jpg" data-title="Veggies sunt bona vobis" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+                        	<div class="tile">
+	<div class="insight-badge">Insight</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/3.jpg" data-title="Dandelion horseradish" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+                        	<div class="tile">
+	<div class="Product-badge">Product</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/MHA_police_full.png" data-title="Azuki bean" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+	<div class="tile">
+	<div class="person-badge">Person</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/2.jpg" data-title="Veggies sunt bona vobis" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+                  	<div class="tile">
+	<div class="provider-badge">Provider</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/3.jpg" data-title="Dandelion horseradish" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+                        	<div class="tile">
+	<div class="insight-badge">Insight</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/MHA_police_full.png" data-title="Azuki bean" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+    	<div class="tile">
+	<div class="product-badge">Product</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/2.jpg" data-title="Veggies sunt bona vobis" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+                        	<div class="tile">
+	<div class="person-badge">Person</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/3.jpg" data-title="Dandelion horseradish" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+                        	<div class="tile">
+	<div class="provider-badge">Provider</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/MHA_police_full.png" data-title="Azuki bean" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+    	<div class="tile">
+	<div class="insight-badge">Insight</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/2.jpg" data-title="Veggies sunt bona vobis" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+                        	<div class="tile">
+	<div class="product-badge">Product</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/3.jpg" data-title="Dandelion horseradish" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+                   	<div class="tile">
+	<div class="person-badge">Person</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/MHA_police_full.png" data-title="Azuki bean" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+	<div class="tile">
+	<div class="provider-badge">Provider</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="ihttps://paulduplantis.github.io/DIF_record_expander_test/images/2.jpg" data-title="Veggies sunt bona vobis" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+                   	<div class="tile">
+	<div class="insight-badge">Insight</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/3.jpg" data-title="Dandelion horseradish" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+                        	<div class="tile">
+	<div class="Product-badge">Product</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/MHA_police_full.png" data-title="Azuki bean" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+   <div class="tile">
+	<div class="person-badge">Person</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/2.jpg" data-title="Veggies sunt bona vobis" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+                        	<div class="tile">
+	<div class="provider-badge">Provider</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/3.jpg" data-title="Dandelion horseradish" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+                        	<div class="tile">
+	<div class="insight-badge">Insight</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+                	<li>
+                    	<a href="http://cargocollective.com/jaimemartinez/" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/MHA_police_full.png" data-title="Azuki bean" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+	<div class="tile">
+	<div class="product-badge">Product</div>
+	<div class="text-group">
+    	<div class="word subject">Subject</div>
+    	<div class="word predicate">Predicate</div>
+    	<div class="word object">Object</div>
+    	<div class="word type">Type</div>
+    	<div class="word subtype">Subtype</div>
+    	<div class="word relationship">Relationship</div>
+	</div>
+</div>
+                    	</a>
+                	</li>
+            	</ul>
+            	<p>Build on<a href="http://veggieipsum.com/">The Deep Inquiry Framework</a></p>
+     	 
+        	</div>
+    	</div><!-- /container -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    	<script src="js/grid.js"></script>
+    	<script>
+        	$(function() {
+            	Grid.init();
+        	});
+    	</script>
+	</body>
 </html>
