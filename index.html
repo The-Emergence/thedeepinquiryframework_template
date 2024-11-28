@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deep Inquiry Framework Template</title>
     <meta name="description" content="Thumbnail Grid with Expanding Preview" />
@@ -16,27 +16,16 @@
 <body>
     <div class="container">
         <header class="clearfix">
-            <h1>Deep Inquiry Framework Template<span> | Click "Attractor" to Expand</span></h1>
+            <h1>Deep Inquiry Framework Template<span> | Attractor</span></h1>
         </header>
 
-        <!-- Attractor Menu -->
-        <ul id="og-grid" class="og-grid">
-            <li>
-                <a href="#" class="attractor" data-title="Attractor Menu" data-description="Explore the attractor categories: Mental Health, Upskilling, and Guitar Amps.">
-                    <div class="tile">
-                        <div class="attractor-badge">Attractor</div>
-                        <div class="text-group">
-                            <div class="word subject">Subject</div>
-                            <div class="word predicate">Predicate</div>
-                            <div class="word object">Object</div>
-                            <div class="word type">Type</div>
-                            <div class="word subtype">Subtype</div>
-                            <div class="word relationship">Relationship</div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-        </ul>
+        <!-- Navigation Menu -->
+        <nav class="menu">
+            <ul>
+                <li><a href="#" id="attractor-menu-item">Attractor</a></li>
+                <li><a href="#">Contribute</a></li>
+            </ul>
+        </nav>
 
         <!-- Main Tile Grid -->
         <div class="main">
@@ -48,77 +37,4 @@
                         <div class="tile">
                             <div class="person-badge">Person</div>
                             <div class="text-group">
-                                <div class="word subject">Subject</div>
-                                <div class="word predicate">Predicate</div>
-                                <div class="word object">Object</div>
-                                <div class="word type">Type</div>
-                                <div class="word subtype">Subtype</div>
-                                <div class="word relationship">Relationship</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" data-largesrc="https://paulduplantis.github.io/DIF_record_expander_test/images/2.jpg" 
-                       data-title="Veggies sunt bona vobis" 
-                       data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
-                        <div class="tile">
-                            <div class="provider-badge">Provider</div>
-                            <div class="text-group">
-                                <div class="word subject">Subject</div>
-                                <div class="word predicate">Predicate</div>
-                                <div class="word object">Object</div>
-                                <div class="word type">Type</div>
-                                <div class="word subtype">Subtype</div>
-                                <div class="word relationship">Relationship</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="js/grid.js"></script>
-    <script>
-        $(document).ready(function () {
-            // Initialize tile grid
-            Grid.init();
-
-            // Handle Attractor click to expand
-            $('.attractor').on('click', function (e) {
-                e.preventDefault();
-                const title = $(this).data('title');
-                const description = $(this).data('description');
-
-                // Create Expander Content
-                const expanderContent = `
-                    <div class="expander-inner">
-                        <h3>${title}</h3>
-                        <p>${description}</p>
-                        <ul class="attractor-links">
-                            <li><a href="#">Mental Health</a></li>
-                            <li><a href="#">Upskilling</a></li>
-                            <li><a href="#">Guitar Amps</a></li>
-                        </ul>
-                        <button id="close-attractor">Close</button>
-                    </div>
-                `;
-
-                // Append to DOM and display
-                $('body').append(`<div id="attractor-expander">${expanderContent}</div>`);
-                $('#attractor-expander').fadeIn();
-
-                // Close functionality
-                $('#close-attractor').on('click', function () {
-                    $('#attractor-expander').fadeOut(function () {
-                        $(this).remove(); // Remove from DOM after hiding
-                    });
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+                                <div class
