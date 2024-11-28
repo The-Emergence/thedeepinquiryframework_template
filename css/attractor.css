@@ -1,0 +1,44 @@
+/* Attractor-specific styles */
+
+/* General container for attractor */
+.attractor-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    padding: 10px;
+    background: linear-gradient(to right, #2f4f4f, #6d8484); /* Example gradient */
+    border-radius: 8px;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Subject buttons or tiles */
+.subject-tile {
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #2a9d8f; /* Default subject color */
+    border-radius: 6px;
+    margin: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.subject-tile:hover {
+    transform: scale(1.05);
+    background-color: #e76f51; /* Hover color */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .attractor-container {
+        padding: 10px;
+    }
+
+    .subject-tile {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
