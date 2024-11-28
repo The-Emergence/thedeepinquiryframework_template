@@ -82,10 +82,21 @@
     font-size: 18px;
     font-weight: bold;
     color: #264653;
-     position: relative;
-    padding-left: 10px; /* Space for the bar */
-    border-right: 4px solid #e76f51; /* Color for predicate bar */
+    position: relative; /* Necessary for the pseudo-element to position relative to the text */
+    padding-left: 10px; /* Adds space for the bar */
 }
+
+.subject::before {
+    content: ''; /* Empty content to create the bar */
+    position: absolute;
+    left: 0; /* Positions the bar at the left edge of the text */
+    top: 50%; /* Vertically centers the bar */
+    transform: translateY(-50%); /* Ensures the bar is centered relative to the text */
+    width: 4px; /* Thickness of the bar */
+    height: 100%; /* Matches the height of the text */
+    background-color: #e76f51; /* Color of the bar */
+}
+
 
 .predicate {
     font-size: 16px;
