@@ -82,6 +82,9 @@
     font-size: 18px;
     font-weight: bold;
     color: #264653;
+     position: relative;
+    padding-left: 10px; /* Space for the bar */
+    border-right: 4px solid #e76f51; /* Color for predicate bar */
 }
 
 .predicate {
@@ -97,24 +100,36 @@
     font-size: 14px;
     font-weight: normal;
     color: #264653;
+     position: relative;
+    padding-left: 10px; /* Space for the bar */
+    border-right: 4px solid #e76f51; /* Color for predicate bar */
 }
 
 .type {
     font-size: 12px;
     font-weight: lighter;
     color: #264653;
+     position: relative;
+    padding-left: 10px; /* Space for the bar */
+    border-left: 4px solid #e76f51; /* Color for predicate bar */
 }
 
 .subtype {
     font-size: 12px;
     font-weight: lighter;
     color: #264653;
+     position: relative;
+    padding-left: 10px; /* Space for the bar */
+    border-right: 4px solid #e76f51; /* Color for predicate bar */
 }
 
 .relationship {
     font-size: 14px;
     font-weight: bold;
     color: #264653;
+     position: relative;
+    padding-left: 10px; /* Space for the bar */
+    border-left: 4px solid #e76f51; /* Color for predicate bar */
 }
 
 /* Hover effect for better visibility */
