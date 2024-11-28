@@ -25,7 +25,7 @@
     font-size: 12px;
     font-weight: bold;
     color: #fff;
-    background-color: #333333;
+   background: linear-gradient(to right, #2f4f4f, #a9b7b7);
     border-radius: 4px;
 }
 .provider-badge {
@@ -36,7 +36,7 @@
     font-size: 12px;
     font-weight: bold;
     color: #fff;
-    background-color: #333333;
+  background: linear-gradient(to right, #2f4f4f, #a9b7b7);
     border-radius: 4px;
 }
 .product-badge {
@@ -47,7 +47,7 @@
     font-size: 12px;
     font-weight: bold;
     color: #fff;
-    background-color: #333333;
+ background: linear-gradient(to right, #2f4f4f, #a9b7b7);
     border-radius: 4px;
 }
 .insight-badge {
@@ -58,7 +58,7 @@
     font-size: 12px;
     font-weight: bold;
     color: #fff;
-    background-color: #333333;
+  background: linear-gradient(to right, #2f4f4f, #a9b7b7);
     border-radius: 4px;
 }
 
