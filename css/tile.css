@@ -88,6 +88,9 @@
     font-size: 16px;
     font-weight: normal;
     color: #264653;
+    position: relative;
+    padding-left: 10px; /* Space for the bar */
+    border-left: 4px solid #e76f51; /* Color for predicate bar */
 }
 
 .object {
