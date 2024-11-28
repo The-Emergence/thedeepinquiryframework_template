@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deep Inquiry Framework Template</title>
     <meta name="description" content="Thumbnail Grid with Expanding Preview" />
@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <header class="clearfix">
-            <h1>Deep Inquiry Framework Template<span> | Attractor</span></h1>
+            <h1>Deep Inquiry Framework Template</h1>
         </header>
 
         <!-- Navigation Menu -->
@@ -37,4 +37,64 @@
                         <div class="tile">
                             <div class="person-badge">Person</div>
                             <div class="text-group">
-                                <div class
+                                <div class="word subject">Subject</div>
+                                <div class="word predicate">Predicate</div>
+                                <div class="word object">Object</div>
+                                <div class="word type">Type</div>
+                                <div class="word subtype">Subtype</div>
+                                <div class="word relationship">Relationship</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <!-- Additional tiles as needed -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/grid.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Initialize tile grid
+            Grid.init();
+
+            // Attach event to "Attractor" menu item
+            $('#attractor-menu-item').on('click', function (e) {
+                e.preventDefault();
+
+                // Check if the attractor window already exists
+                if ($('#attractor-expander').length) {
+                    $('#attractor-expander').fadeToggle(); // Toggle if it already exists
+                    return;
+                }
+
+                // Create the expander window
+                const expanderContent = `
+                    <div id="attractor-expander" style="position: fixed; top: 20%; left: 50%; transform: translateX(-50%); width: 300px; background: white; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); padding: 20px; z-index: 1000;">
+                        <h3>Attractor Menu</h3>
+                        <p>Explore the attractor categories:</p>
+                        <ul class="attractor-links">
+                            <li><a href="#">Mental Health</a></li>
+                            <li><a href="#">Upskilling</a></li>
+                            <li><a href="#">Guitar Amps</a></li>
+                        </ul>
+                        <button id="close-attractor" style="margin-top: 10px;">Close</button>
+                    </div>
+                `;
+
+                // Append the expander to the body
+                $('body').append(expanderContent);
+
+                // Attach close event
+                $('#close-attractor').on('click', function () {
+                    $('#attractor-expander').fadeOut(function () {
+                        $(this).remove();
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
