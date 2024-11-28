@@ -12,9 +12,10 @@
     max-width: 1200px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-/* Attractor menu styles */
+/* Center the menu and its items */
 .menu {
-    text-align: center;
+    display: flex;
+    justify-content: center; /* Center-aligns the menu items */
     margin: 20px 0;
 }
 
@@ -22,19 +23,20 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    display: inline-block; /* This makes the menu center-align */
+    display: flex; /* Ensures horizontal layout of menu items */
+    justify-content: center;
+    align-items: center;
 }
 
 .menu ul li {
-    display: inline; /* Makes menu items horizontal */
-    margin: 0 15px;
+    margin: 0 15px; /* Spacing between menu items */
 }
 
 .menu ul li a {
     text-decoration: none;
     font-size: 1.2rem;
     color: #333;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .menu ul li a:hover {
