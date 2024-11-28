@@ -39,7 +39,6 @@
     background-color: #e76f51;
     border-radius: 4px;
 }
-
 .product-badge {
     position: absolute;
     top: 10px;
@@ -75,72 +74,83 @@
 .word {
     margin: 5px 0;
     font-family: Arial, sans-serif;
+    position: relative; /* Required for pseudo-elements */
+    padding-left: 15px; /* Space for left bar */
+    padding-right: 15px; /* Space for right bar */
 }
 
-/* Individual word categories */
-.subject {
-    font-size: 18px;
-    font-weight: bold;
-    color: #264653;
-    position: relative; /* Necessary for the pseudo-element to position relative to the text */
-    padding-left: 10px; /* Adds space for the bar */
-}
+/* Alternating bar placements */
 
+/* Subject: Left bar */
 .subject::before {
-    content: ''; /* Empty content to create the bar */
+    content: '';
     position: absolute;
-    left: 0; /* Positions the bar at the left edge of the text */
-    top: 50%; /* Vertically centers the bar */
-    transform: translateY(-50%); /* Ensures the bar is centered relative to the text */
-    width: 4px; /* Thickness of the bar */
-    height: 100%; /* Matches the height of the text */
-    background-color: #e76f51; /* Color of the bar */
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #2a9d8f; /* Green for Subject */
 }
 
-
-.predicate {
-    font-size: 16px;
-    font-weight: normal;
-    color: #264653;
-    position: relative;
-    padding-left: 10px; /* Space for the bar */
-    border-left: 4px solid #e76f51; /* Color for predicate bar */
+/* Predicate: Right bar */
+.predicate::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #e76f51; /* Orange for Predicate */
 }
 
-.object {
-    font-size: 14px;
-    font-weight: normal;
-    color: #264653;
-     position: relative;
-    padding-left: 10px; /* Space for the bar */
-    border-right: 4px solid #e76f51; /* Color for predicate bar */
+/* Object: Left bar */
+.object::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #264653; /* Dark Blue for Object */
 }
 
-.type {
-    font-size: 12px;
-    font-weight: lighter;
-    color: #264653;
-     position: relative;
-    padding-left: 10px; /* Space for the bar */
-    border-left: 4px solid #e76f51; /* Color for predicate bar */
+/* Type: Right bar */
+.type::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #f4a261; /* Golden Yellow for Type */
 }
 
-.subtype {
-    font-size: 12px;
-    font-weight: lighter;
-    color: #264653;
-     position: relative;
-    padding-left: 10px; /* Space for the bar */
-    border-right: 4px solid #e76f51; /* Color for predicate bar */
+/* Subtype: Left bar */
+.subtype::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #e9c46a; /* Light Yellow for Subtype */
 }
 
-.relationship {
-    font-size: 14px;
-    font-weight: bold;
-    color: #264653;
-     position: relative;
-    padding-left: 10px; /* Space for the bar */
-    border-left: 4px solid #e76f51; /* Color for predicate bar */
+/* Relationship: Right bar */
+.relationship::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #457b9d; /* Cool Blue for Relationship */
 }
 
 /* Hover effect for better visibility */
