@@ -2,83 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Product Webform to HTML Export</title>
+    <title>Product Webform Export</title>
 </head>
 <body>
-    <h2>Product Webform to HTML Export</h2>
-    <form id="exportForm">
+    <h2>Product Webform</h2>
+    <form id="productForm">
         <label for="productName">Product Name:</label>
         <input type="text" id="productName" name="productName" required><br><br>
-
+        
         <label for="productDescription">Product Description:</label>
         <textarea id="productDescription" name="productDescription" required></textarea><br><br>
-
+        
         <label for="productPrice">Product Price:</label>
         <input type="text" id="productPrice" name="productPrice" required><br><br>
-
-        <label for="productBuyLink">Buy Link:</label>
+        
+        <label for="productBuyLink">Product Buy Link:</label>
         <input type="url" id="productBuyLink" name="productBuyLink" required><br><br>
-
-        <label for="rdfSubject">RDF Subject:</label>
+        
+        <h3>RDF6 Words</h3>
+        <label for="rdfSubject">Subject:</label>
         <input type="text" id="rdfSubject" name="rdfSubject" required><br><br>
-
-        <label for="rdfPredicate">RDF Predicate:</label>
+        
+        <label for="rdfPredicate">Predicate:</label>
         <input type="text" id="rdfPredicate" name="rdfPredicate" required><br><br>
-
-        <label for="rdfObject">RDF Object:</label>
+        
+        <label for="rdfObject">Object:</label>
         <input type="text" id="rdfObject" name="rdfObject" required><br><br>
-
-        <label for="rdfType">RDF Type:</label>
+        
+        <label for="rdfType">Type:</label>
         <input type="text" id="rdfType" name="rdfType" required><br><br>
-
-        <label for="rdfSubtype">RDF Subtype:</label>
+        
+        <label for="rdfSubtype">Subtype:</label>
         <input type="text" id="rdfSubtype" name="rdfSubtype" required><br><br>
-
-        <label for="rdfRelationship">RDF Relationship:</label>
+        
+        <label for="rdfRelationship">Relationship:</label>
         <input type="text" id="rdfRelationship" name="rdfRelationship" required><br><br>
-
-        <button type="button" onclick="exportToHTML()">Export to HTML</button>
+        
+        <button type="button" onclick="exportProductHTML()">Export to HTML</button>
     </form>
 
     <script>
-    function exportToHTML() {
-        const productName = document.getElementById('productName').value;
-        const productDescription = document.getElementById('productDescription').value;
-        const productPrice = document.getElementById('productPrice').value;
-        const productBuyLink = document.getElementById('productBuyLink').value;
-        const rdfSubject = document.getElementById('rdfSubject').value;
-        const rdfPredicate = document.getElementById('rdfPredicate').value;
-        const rdfObject = document.getElementById('rdfObject').value;
-        const rdfType = document.getElementById('rdfType').value;
-        const rdfSubtype = document.getElementById('rdfSubtype').value;
-        const rdfRelationship = document.getElementById('rdfRelationship').value;
+    function exportProductHTML() {
+        const form = document.getElementById('productForm');
+        const formData = new FormData(form);
 
+        // Collect form data
+        const product = {};
+        formData.forEach((value, key) => {
+            product[key] = value;
+        });
+
+        // Generate HTML for Tile and Expander
         const htmlContent = `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>${productName}</title>
-</head>
-<body>
-    <h1>${productName}</h1>
-    <p><strong>Description:</strong> ${productDescription}</p>
-    <p><strong>Price:</strong> ${productPrice}</p>
-    <p><strong>Buy Link:</strong> <a href="${productBuyLink}" target="_blank">${productBuyLink}</a></p>
-    <h3>RDF6 Information</h3>
-    <p><strong>Subject:</strong> ${rdfSubject}</p>
-    <p><strong>Predicate:</strong> ${rdfPredicate}</p>
-    <p><strong>Object:</strong> ${rdfObject}</p>
-    <p><strong>Type:</strong> ${rdfType}</p>
-    <p><strong>Subtype:</strong> ${rdfSubtype}</p>
-    <p><strong>Relationship:</strong> ${rdfRelationship}</p>
-</body>
-</html>`;
+<li>
+    <a href="${product.productBuyLink}" data-largesrc="" data-title="${product.productName}" data-description="${product.productDescription}">
+        <div class="tile">
+            <div class="product-badge">${product.productName}</div>
+            <div class="text-group">
+                <div class="word subject">${product.rdfSubject}</div>
+                <div class="word predicate">${product.rdfPredicate}</div>
+                <div class="word object">${product.rdfObject}</div>
+                <div class="word type">${product.rdfType}</div>
+                <div class="word subtype">${product.rdfSubtype}</div>
+                <div class="word relationship">${product.rdfRelationship}</div>
+            </div>
+        </div>
+    </a>
+</li>`;
 
+        // Create a Blob and download as HTML
         const blob = new Blob([htmlContent], { type: 'text/html' });
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
-        a.download = `${productName.replace(/\s+/g, '_').toLowerCase()}_record.html`;
+        a.download = `${product.productName.replace(/ /g, '_')}_record.html`;
         a.click();
     }
     </script>
