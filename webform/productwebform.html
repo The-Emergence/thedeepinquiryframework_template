@@ -8,52 +8,25 @@
 </head>
 <body>
   <div class="dif-webform-container">
-    <h1 class="dif-webform-title">Create a Product Record</h1>
-    <form id="product-form" action="#" method="POST">
+    <h1 class="dif-webform-title">Product Record Form</h1>
+
+    <form id="product-form">
+      <!-- Product Name Field -->
       <div class="form-group">
-        <label for="product_name">Product Name:</label>
-        <input type="text" id="product_name" name="product_name" class="dif-webform-input" required>
+        <label for="product-name">Product Name:</label>
+        <input type="text" id="product-name" name="product_name" class="dif-webform-input" required>
       </div>
+
+      <!-- Submit Button -->
       <div class="form-group">
-        <label for="product_description">Product Description:</label>
-        <textarea id="product_description" name="product_description" class="dif-webform-input"></textarea>
+        <button type="submit" class="dif-webform-submit">Generate Product HTML</button>
       </div>
-      <div class="form-group">
-        <label for="product_price">Price:</label>
-        <input type="text" id="product_price" name="product_price" class="dif-webform-input" required>
-      </div>
-      <div class="form-group">
-        <label for="product_buy_link">Buy Link:</label>
-        <input type="url" id="product_buy_link" name="product_buy_link" class="dif-webform-input" required>
-      </div>
-      <div class="form-group">
-        <label for="rdf_subj">RDF Subject:</label>
-        <input type="text" id="rdf_subj" name="rdf_subj" class="dif-webform-input">
-      </div>
-      <div class="form-group">
-        <label for="rdf_pred">RDF Predicate:</label>
-        <input type="text" id="rdf_pred" name="rdf_pred" class="dif-webform-input">
-      </div>
-      <div class="form-group">
-        <label for="rdf_obje">RDF Object:</label>
-        <input type="text" id="rdf_obje" name="rdf_obje" class="dif-webform-input">
-      </div>
-      <div class="form-group">
-        <label for="rdf_type">RDF Type:</label>
-        <input type="text" id="rdf_type" name="rdf_type" class="dif-webform-input">
-      </div>
-      <div class="form-group">
-        <label for="rdf_styp">RDF Subtype:</label>
-        <input type="text" id="rdf_styp" name="rdf_styp" class="dif-webform-input">
-      </div>
-      <div class="form-group">
-        <label for="rdf_rela">RDF Relationship:</label>
-        <input type="text" id="rdf_rela" name="rdf_rela" class="dif-webform-input">
-      </div>
-      <button type="submit" class="dif-webform-submit">Generate HTML</button>
     </form>
+
+    <!-- HTML Output -->
     <div id="html-output" style="margin-top: 20px; padding: 10px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 4px;"></div>
   </div>
+
   <script src="js/product_form_handler.js"></script>
 </body>
 </html>
