@@ -1,32 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Webform</title>
-  <link rel="stylesheet" href="css/webform.css">
+    <meta charset="UTF-8">
+    <title>Webform to HTML Export</title>
 </head>
 <body>
-  <div class="dif-webform-container">
-    <h1 class="dif-webform-title">Product Record Form</h1>
-
-    <form id="product-form">
-      <!-- Product Name Field -->
-      <div class="form-group">
-        <label for="product-name">Product Name:</label>
-        <input type="text" id="product-name" name="product_name" class="dif-webform-input" required>
-      </div>
-
-      <!-- Submit Button -->
-      <div class="form-group">
-        <button type="submit" class="dif-webform-submit">Generate Product HTML</button>
-      </div>
+    <h2>Webform to HTML Export</h2>
+    <form id="exportForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea><br><br>
+        
+        <button type="button" onclick="exportToHTML()">Export to HTML</button>
     </form>
 
-    <!-- HTML Output -->
-    <div id="html-output" style="margin-top: 20px; padding: 10px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 4px;"></div>
-  </div>
+    <script>
+    function exportToHTML() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
 
-  <script src="js/product_form_handler.js"></script>
+        const htmlContent = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exported Form Data</title>
+</head>
+<body>
+    <h1>Form Submission</h1>
+    <p><strong>Name:</strong> ${name}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Message:</strong> ${message}</p>
+</body>
+</html>`;
+
+        const blob = new Blob([htmlContent], { type: 'text/html' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'form_export.html';
+        a.click();
+    }
+    </script>
 </body>
 </html>
