@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Record Webform</title>
+    <link rel="stylesheet" href="css/webform.css">
+</head>
+<body>
+    <div class="dif-webform-container">
+        <h1 class="dif-webform-title">Create Product Record</h1>
+
+        <form id="product-form" action="/submit" method="POST">
+            <!-- Basic Details -->
+            <div class="form-group">
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" name="product_name" class="dif-webform-input" placeholder="e.g., Fender Mustang LT25" required>
+            </div>
+            <div class="form-group">
+                <label for="product-description">Product Description:</label>
+                <textarea id="product-description" name="product_description" class="dif-webform-input" rows="4" placeholder="Brief description of the product"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="product-price">Price:</label>
+                <input type="text" id="product-price" name="product_price" class="dif-webform-input" placeholder="e.g., $199.99">
+            </div>
+            <div class="form-group">
+                <label for="product-image">Image URL:</label>
+                <input type="url" id="product-image" name="product_image" class="dif-webform-input" placeholder="e.g., https://example.com/image.jpg" required>
+            </div>
+            <div class="form-group">
+                <label for="product-link">Buy Link:</label>
+                <input type="url" id="product-link" name="product_link" class="dif-webform-input" placeholder="e.g., https://example.com/buy" required>
+            </div>
+
+            <!-- Key Features -->
+            <div class="form-group">
+                <label for="power-output">Power Output:</label>
+                <input type="text" id="power-output" name="power_output" class="dif-webform-input" placeholder="e.g., 85 watts">
+            </div>
+            <div class="form-group">
+                <label for="speaker-configuration">Speaker Configuration:</label>
+                <input type="text" id="speaker-configuration" name="speaker_configuration" class="dif-webform-input" placeholder="e.g., 2x12” Jensen C12K speakers">
+            </div>
+            <div class="form-group">
+                <label for="weight-dimensions">Weight & Dimensions:</label>
+                <textarea id="weight-dimensions" name="weight_dimensions" class="dif-webform-input" rows="2" placeholder="e.g., 64 lbs, 19.87” H x 26.5” W x 10.5” D"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="product-features">Notable Features:</label>
+                <textarea id="product-features" name="product_features" class="dif-webform-input" rows="3" placeholder="e.g., Built-in effects, Bluetooth connectivity"></textarea>
+            </div>
+
+            <!-- Additional Metadata -->
+            <div class="form-group">
+                <label for="product-category">Category/Use Case:</label>
+                <input type="text" id="product-category" name="product_category" class="dif-webform-input" placeholder="e.g., Jazz, Rock, Country">
+            </div>
+            <div class="form-group">
+                <label for="warranty-info">Warranty Information:</label>
+                <input type="text" id="warranty-info" name="warranty_info" class="dif-webform-input" placeholder="e.g., 2-Year Warranty">
+            </div>
+            <div class="form-group">
+                <label for="brand-name">Manufacturer/Brand:</label>
+                <input type="text" id="brand-name" name="brand_name" class="dif-webform-input" placeholder="e.g., Fender">
+            </div>
+
+            <!-- RDF6 Tags -->
+            <h2>RDF6 Tags</h2>
+            <div class="form-group">
+                <label for="rdf-subject">Subject:</label>
+                <input type="text" id="rdf-subject" name="rdf_subject" class="dif-webform-input" placeholder="e.g., Guitar Amp">
+            </div>
+            <div class="form-group">
+                <label for="rdf-predicate">Predicate:</label>
+                <input type="text" id="rdf-predicate" name="rdf_predicate" class="dif-webform-input" placeholder="e.g., Produces Sound">
+            </div>
+            <div class="form-group">
+                <label for="rdf-object">Object:</label>
+                <input type="text" id="rdf-object" name="rdf_object" class="dif-webform-input" placeholder="e.g., Music">
+            </div>
+            <div class="form-group">
+                <label for="rdf-type">Type:</label>
+                <input type="text" id="rdf-type" name="rdf_type" class="dif-webform-input" placeholder="e.g., Product">
+            </div>
+            <div class="form-group">
+                <label for="rdf-subtype">Subtype:</label>
+                <input type="text" id="rdf-subtype" name="rdf_subtype" class="dif-webform-input" placeholder="e.g., Amplifier">
+            </div>
+            <div class="form-group">
+                <label for="rdf-relationship">Relationship:</label>
+                <input type="text" id="rdf-relationship" name="rdf_relationship" class="dif-webform-input" placeholder="e.g., Enhances Sound">
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="dif-webform-submit">Generate Record</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
