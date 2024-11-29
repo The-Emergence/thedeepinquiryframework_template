@@ -363,39 +363,58 @@ var Grid = (function() {
 				this.setTransition();
 			}
 		},
-		update : function( $item ) {
 
-			if( $item ) {
-				this.$item = $item;
-			}
+update : function( $item ) {
+
+    if( $item ) {
+        this.$item = $item;
+    }
+
+    // If already expanded, remove "og-expanded" from the current item and add to the new item
+    if( current !== -1 ) {
+        var $currentItem = $items.eq( current );
+        $currentItem.removeClass( 'og-expanded' );
+        this.$item.addClass( 'og-expanded' );
+        // Position the preview correctly
+        this.positionPreview();
+    }
+
+    // Update current value
+    current = this.$item.index();
+
+    // Update preview's content
+    var $itemEl = this.$item.children( 'a' ),
+        eldata = {
+            href : $itemEl.attr( 'href' ),
+            largesrc : $itemEl.data( 'largesrc' ),
+            title : $itemEl.data( 'title' ),
+            description : $itemEl.data( 'description' ),
+            price : $itemEl.data( 'price' ),
+            rdfsubject : $itemEl.data( 'rdfsubject' ),
+            rdfpredicate : $itemEl.data( 'rdfpredicate' ),
+            rdfobject : $itemEl.data( 'rdfobject' ),
+            rdftype : $itemEl.data( 'rdftype' ),
+            rdfsubtype : $itemEl.data( 'rdfsubtype' ),
+            rdfrelationship : $itemEl.data( 'rdfrelationship' )
+        };
+
+    this.$title.html(eldata.title);
+    this.$description.html(`
+        <p>${eldata.description}</p>
+        <p><strong>Price:</strong> ${eldata.price}</p>
+        <p><strong>Subject:</strong> ${eldata.rdfsubject}</p>
+        <p><strong>Predicate:</strong> ${eldata.rdfpredicate}</p>
+        <p><strong>Object:</strong> ${eldata.rdfobject}</p>
+        <p><strong>Type:</strong> ${eldata.rdftype}</p>
+        <p><strong>Subtype:</strong> ${eldata.rdfsubtype}</p>
+        <p><strong>Relationship:</strong> ${eldata.rdfrelationship}</p>
+    `);
+
+    if (settings.showVisitButton === true) {
+        this.$href.attr( 'href', eldata.href );
+    }
+
 			
-			// if already expanded remove class "og-expanded" from current item and add it to new item
-			if( current !== -1 ) {
-				var $currentItem = $items.eq( current );
-				$currentItem.removeClass( 'og-expanded' );
-				this.$item.addClass( 'og-expanded' );
-				// position the preview correctly
-				this.positionPreview();
-			}
-
-			// update current value
-			current = this.$item.index();
-
-			// update preview´s content
-			var $itemEl = this.$item.children( 'a' ),
-				eldata = {
-					href : $itemEl.attr( 'href' ),
-					largesrc : $itemEl.data( 'largesrc' ),
-					title : $itemEl.data( 'title' ),
-					description : $itemEl.data( 'description' )
-				};
-
-			this.$title.html( eldata.title );
-			this.$description.html( eldata.description );
-			if (settings.showVisitButton === true) {
-				this.$href.attr( 'href', eldata.href );
-			}
-
 			var self = this;
 			
 			// remove the current image in the preview
