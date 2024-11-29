@@ -1,6 +1,7 @@
 const htmlContent = `
 <li>
-    <a href="${product.productBuyLink}" data-largesrc="" data-title="${product.productName}" data-description="${product.productDescription}">
+<a href="${product.productBuyLink}" data-largesrc="" data-title="${product.productName}" 
+       data-description="${product.productDescription}" data-price="${product.productPrice}">
         <div class="tile">
             <div class="product-badge">${product.productName}</div>
             <div class="text-group">
