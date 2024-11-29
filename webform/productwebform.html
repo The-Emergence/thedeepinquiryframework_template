@@ -42,41 +42,44 @@
     </form>
 
     <script>
-    function exportProductHTML() {
-        const form = document.getElementById('productForm');
-        const formData = new FormData(form);
 
-        // Collect form data
-        const product = {};
-        formData.forEach((value, key) => {
-            product[key] = value;
-        });
+function exportProductHTML() {
+    const form = document.getElementById('productForm');
+    const formData = new FormData(form);
 
-        // Generate HTML for Tile and Expander
-        const htmlContent = `
+    // Collect form data
+    const product = {};
+    formData.forEach((value, key) => {
+        product[key] = value || 'N/A'; // Use 'N/A' as a fallback for empty fields
+    });
+
+    // Generate HTML for Tile and Expander
+    const htmlContent = `
 <li>
-    <a href="${product.productBuyLink}" data-largesrc="" data-title="${product.productName}" data-description="${product.productDescription}">
+    <a href="${product.productBuyLink || '#'}" data-largesrc="" data-title="${product.productName || 'Unnamed Product'}" data-description="${product.productDescription || 'No description provided.'}">
         <div class="tile">
-            <div class="product-badge">${product.productName}</div>
+            <div class="product-badge">${product.productName || 'Unnamed Product'}</div>
             <div class="text-group">
-                <div class="word subject">${product.rdfSubject}</div>
-                <div class="word predicate">${product.rdfPredicate}</div>
-                <div class="word object">${product.rdfObject}</div>
-                <div class="word type">${product.rdfType}</div>
-                <div class="word subtype">${product.rdfSubtype}</div>
-                <div class="word relationship">${product.rdfRelationship}</div>
+                <div class="word subject">${product.rdfSubject || 'No subject'}</div>
+                <div class="word predicate">${product.rdfPredicate || 'No predicate'}</div>
+                <div class="word object">${product.rdfObject || 'No object'}</div>
+                <div class="word type">${product.rdfType || 'No type'}</div>
+                <div class="word subtype">${product.rdfSubtype || 'No subtype'}</div>
+                <div class="word relationship">${product.rdfRelationship || 'No relationship'}</div>
             </div>
         </div>
     </a>
 </li>`;
 
-        // Create a Blob and download as HTML
-        const blob = new Blob([htmlContent], { type: 'text/html' });
-        const a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
-        a.download = `${product.productName.replace(/ /g, '_')}_record.html`;
-        a.click();
-    }
+    // Create a Blob and download as HTML
+    const blob = new Blob([htmlContent], { type: 'text/html' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `${(product.productName || 'Unnamed_Product').replace(/ /g, '_')}_record.html`;
+    a.click();
+}
+
+        
     </script>
 </body>
 </html>
