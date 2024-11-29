@@ -27,9 +27,9 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
     </li>
   `;
 
-  // Display the generated HTML.
+  // Display the generated HTML in the output div.
   const outputDiv = document.getElementById('html-output');
-  outputDiv.innerText = html;
+  outputDiv.innerHTML = html; // Use .innerHTML to correctly render HTML.
 
   // Optionally, log the HTML for debugging.
   console.log(html);
