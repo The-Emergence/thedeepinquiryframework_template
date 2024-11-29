@@ -1,27 +1,15 @@
 document.getElementById('product-form').addEventListener('submit', function (e) {
-  e.preventDefault(); // Prevent the page from reloading.
+  e.preventDefault(); // Prevent the form from reloading the page.
 
-  // Collect form data.
-  const formData = new FormData(e.target);
-  const productData = {};
-  formData.forEach((value, key) => {
-    productData[key] = value;
-  });
+  // Collect the Product Name from the form.
+  const productName = document.getElementById('product-name').value;
 
-  // Generate the HTML for the Tile and Expander content.
+  // Generate HTML for the product record.
   const html = `
     <li>
-      <a href="${productData.product_buy_link}" data-largesrc="" data-title="${productData.product_name}" data-description="${productData.product_description}">
+      <a href="#" data-title="${productName}">
         <div class="tile">
-          <div class="product-badge">${productData.product_name}</div>
-          <div class="text-group">
-            <div class="word subject">${productData.rdf_subj}</div>
-            <div class="word predicate">${productData.rdf_pred}</div>
-            <div class="word object">${productData.rdf_obje}</div>
-            <div class="word type">${productData.rdf_type}</div>
-            <div class="word subtype">${productData.rdf_styp}</div>
-            <div class="word relationship">${productData.rdf_rela}</div>
-          </div>
+          <div class="product-badge">${productName}</div>
         </div>
       </a>
     </li>
@@ -29,8 +17,8 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
 
   // Display the generated HTML in the output div.
   const outputDiv = document.getElementById('html-output');
-  outputDiv.innerHTML = html; // Use .innerHTML to correctly render HTML.
+  outputDiv.textContent = html; // Display as plain text.
 
-  // Optionally, log the HTML for debugging.
+  // Log the result for debugging.
   console.log(html);
 });
