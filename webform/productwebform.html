@@ -2,48 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Webform to HTML Export</title>
+    <title>Product Webform to HTML Export</title>
 </head>
 <body>
-    <h2>Webform to HTML Export</h2>
+    <h2>Product Webform to HTML Export</h2>
     <form id="exportForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea><br><br>
-        
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" name="productName" required><br><br>
+
+        <label for="productDescription">Product Description:</label>
+        <textarea id="productDescription" name="productDescription" required></textarea><br><br>
+
+        <label for="productPrice">Product Price:</label>
+        <input type="text" id="productPrice" name="productPrice" required><br><br>
+
+        <label for="productBuyLink">Buy Link:</label>
+        <input type="url" id="productBuyLink" name="productBuyLink" required><br><br>
+
+        <label for="rdfSubject">RDF Subject:</label>
+        <input type="text" id="rdfSubject" name="rdfSubject" required><br><br>
+
+        <label for="rdfPredicate">RDF Predicate:</label>
+        <input type="text" id="rdfPredicate" name="rdfPredicate" required><br><br>
+
+        <label for="rdfObject">RDF Object:</label>
+        <input type="text" id="rdfObject" name="rdfObject" required><br><br>
+
+        <label for="rdfType">RDF Type:</label>
+        <input type="text" id="rdfType" name="rdfType" required><br><br>
+
+        <label for="rdfSubtype">RDF Subtype:</label>
+        <input type="text" id="rdfSubtype" name="rdfSubtype" required><br><br>
+
+        <label for="rdfRelationship">RDF Relationship:</label>
+        <input type="text" id="rdfRelationship" name="rdfRelationship" required><br><br>
+
         <button type="button" onclick="exportToHTML()">Export to HTML</button>
     </form>
 
     <script>
     function exportToHTML() {
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+        const productName = document.getElementById('productName').value;
+        const productDescription = document.getElementById('productDescription').value;
+        const productPrice = document.getElementById('productPrice').value;
+        const productBuyLink = document.getElementById('productBuyLink').value;
+        const rdfSubject = document.getElementById('rdfSubject').value;
+        const rdfPredicate = document.getElementById('rdfPredicate').value;
+        const rdfObject = document.getElementById('rdfObject').value;
+        const rdfType = document.getElementById('rdfType').value;
+        const rdfSubtype = document.getElementById('rdfSubtype').value;
+        const rdfRelationship = document.getElementById('rdfRelationship').value;
 
         const htmlContent = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Exported Form Data</title>
+    <title>${productName}</title>
 </head>
 <body>
-    <h1>Form Submission</h1>
-    <p><strong>Name:</strong> ${name}</p>
-    <p><strong>Email:</strong> ${email}</p>
-    <p><strong>Message:</strong> ${message}</p>
+    <h1>${productName}</h1>
+    <p><strong>Description:</strong> ${productDescription}</p>
+    <p><strong>Price:</strong> ${productPrice}</p>
+    <p><strong>Buy Link:</strong> <a href="${productBuyLink}" target="_blank">${productBuyLink}</a></p>
+    <h3>RDF6 Information</h3>
+    <p><strong>Subject:</strong> ${rdfSubject}</p>
+    <p><strong>Predicate:</strong> ${rdfPredicate}</p>
+    <p><strong>Object:</strong> ${rdfObject}</p>
+    <p><strong>Type:</strong> ${rdfType}</p>
+    <p><strong>Subtype:</strong> ${rdfSubtype}</p>
+    <p><strong>Relationship:</strong> ${rdfRelationship}</p>
 </body>
 </html>`;
 
         const blob = new Blob([htmlContent], { type: 'text/html' });
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
-        a.download = 'form_export.html';
+        a.download = `${productName.replace(/\s+/g, '_').toLowerCase()}_record.html`;
         a.click();
     }
     </script>
