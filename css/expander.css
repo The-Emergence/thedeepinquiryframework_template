@@ -1,0 +1,50 @@
+.og-left {
+    float: left;
+    width: 40%;
+    margin-right: 20px;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.og-right {
+    float: right;
+    width: 55%;
+}
+
+.product-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-details {
+    margin-bottom: 20px;
+}
+
+.product-link {
+    margin-top: 10px;
+}
+
+.share-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.share-options a {
+    text-decoration: none;
+    padding: 5px 10px;
+    color: #fff;
+    background-color: #007BFF;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.share-options a:hover {
+    background-color: #0056b3;
+}
