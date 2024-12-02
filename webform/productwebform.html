@@ -1,82 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Webform</title>
-    <link rel="stylesheet" href="../css/webform.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Product Webform</title>
+	<link rel="stylesheet" type="text/css" href="../css/webform.css">
 </head>
 <body>
-    <div class="dif-webform-container">
-        <h2 class="dif-webform-title">Product Record Webform</h2>
-        <form id="productForm">
-            <!-- Tile Preview Fields -->
-            <fieldset>
-                <legend>Tile Preview Information</legend>
-                <div class="form-group">
-                    <label for="tileName">Product Name (Tile Preview):</label>
-                    <input type="text" id="tileName" name="tileName" required class="dif-webform-input">
-                </div>
-                <div class="form-group">
-                    <label for="tileSummary">Summary (Short Description for Tile Preview):</label>
-                    <input type="text" id="tileSummary" name="tileSummary" required class="dif-webform-input">
-                </div>
-            </fieldset>
+	<div class="dif-webform-container">
+    	<h2 class="dif-webform-title">Create a Product Record</h2>
+    	<form id="productForm">
+        	<!-- Product Name -->
+        	<div class="form-group">
+            	<label for="productName">Product Name:</label>
+            	<input type="text" id="productName" name="productName" class="dif-webform-input" placeholder="What is the name of the product?" required>
+        	</div>
 
-            <!-- Expander Content Fields -->
-            <fieldset>
-                <legend>Expander Content Information</legend>
-                <div class="form-group">
-                    <label for="productName">Full Product Name (Expander):</label>
-                    <input type="text" id="productName" name="productName" required class="dif-webform-input">
-                </div>
-                <div class="form-group">
-                    <label for="productDescription">Description:</label>
-                    <textarea id="productDescription" name="productDescription" required class="dif-webform-input"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="productPrice">Price:</label>
-                    <input type="text" id="productPrice" name="productPrice" class="dif-webform-input">
-                </div>
-                <div class="form-group">
-                    <label for="productImage">Product Image URL:</label>
-                    <input type="text" id="productImage" name="productImage" class="dif-webform-input">
-                </div>
-                <div class="form-group">
-                    <label for="productBuyLink">Buy Link:</label>
-                    <input type="text" id="productBuyLink" name="productBuyLink" class="dif-webform-input">
-                </div>
-                <div class="form-group">
-                    <label for="rdfSubject">Subject:</label>
-                    <input type="text" id="rdfSubject" name="rdfSubject" class="dif-webform-input">
-                </div>
-                <div class="form-group">
-                    <label for="rdfPredicate">Predicate:</label>
-                    <input type="text" id="rdfPredicate" name="rdfPredicate" class="dif-webform-input">
-                </div>
-                <div class="form-group">
-                    <label for="rdfObject">Object:</label>
-                    <input type="text" id="rdfObject" name="rdfObject" class="dif-webform-input">
-                </div>
-                <div class="form-group">
-                    <label for="rdfType">Type:</label>
-                    <input type="text" id="rdfType" name="rdfType" class="dif-webform-input">
-                </div>
-                <div class="form-group">
-                    <label for="rdfSubtype">Subtype:</label>
-                    <input type="text" id="rdfSubtype" name="rdfSubtype" class="dif-webform-input">
-                </div>
-                <div class="form-group">
-                    <label for="rdfRelationship">Relationship:</label>
-                    <input type="text" id="rdfRelationship" name="rdfRelationship" class="dif-webform-input">
-                </div>
-            </fieldset>
+        	<!-- Product Description -->
+        	<div class="form-group">
+            	<label for="productDescription">Product Description:</label>
+            	<textarea id="productDescription" name="productDescription" class="dif-webform-input" placeholder="Provide a detailed description of the product's features, purpose, and value." required></textarea>
+        	</div>
 
-            <!-- Submit Button -->
-            <button type="button" class="dif-webform-submit" onclick="exportProductHTML()">Generate HTML</button>
-        </form>
-    </div>
+        	<!-- Product Price -->
+        	<div class="form-group">
+            	<label for="productPrice">Product Price:</label>
+            	<input type="text" id="productPrice" name="productPrice" class="dif-webform-input" placeholder="e.g., $199.99">
+        	</div>
 
-    <script src="../js/product_form_handler.js"></script>
+        	<!-- Product Buy Link -->
+        	<div class="form-group">
+            	<label for="productBuyLink">Buy Link:</label>
+            	<input type="url" id="productBuyLink" name="productBuyLink" class="dif-webform-input" placeholder="Provide a URL where this product can be purchased.">
+        	</div>
+
+        	<!-- Image Upload -->
+        	<div class="form-group">
+            	<label for="productImage">Product Image:</label>
+            	<input type="file" id="productImage" name="productImage" accept="image/*" class="dif-webform-input">
+        	</div>
+
+        	<!-- RDF6 Fields -->
+        	<h3>RDF6 Metadata</h3>
+        	<div class="form-group">
+            	<label for="rdfSubject">Subject:</label>
+            	<input type="text" id="rdfSubject" name="rdfSubject" class="dif-webform-input" placeholder="What specifically is this product?">
+        	</div>
+        	<div class="form-group">
+            	<label for="rdfPredicate">Predicate:</label>
+            	<input type="text" id="rdfPredicate" name="rdfPredicate" class="dif-webform-input" placeholder="What tonal qualities does this amp have a reputation for?">
+        	</div>
+        	<div class="form-group">
+            	<label for="rdfObject">Object:</label>
+            	<input type="text" id="rdfObject" name="rdfObject" class="dif-webform-input" placeholder="What sound or tone does it create?">
+        	</div>
+        	<div class="form-group">
+            	<label for="rdfType">Type:</label>
+            	<input type="text" id="rdfType" name="rdfType" class="dif-webform-input" placeholder="What category/type does it belong to?">
+        	</div>
+        	<div class="form-group">
+            	<label for="rdfSubtype">Subtype:</label>
+            	<input type="text" id="rdfSubtype" name="rdfSubtype" class="dif-webform-input" placeholder="What genre or style is it best for?">
+        	</div>
+        	<div class="form-group">
+            	<label for="rdfRelationship">Relationship:</label>
+            	<input type="text" id="rdfRelationship" name="rdfRelationship" class="dif-webform-input" placeholder="What is this product related to?">
+        	</div>
+
+        	<!-- Export Button -->
+        	<button type="button" class="dif-webform-submit" onclick="exportProductHTML()">Export HTML</button>
+    	</form>
+	</div>
+
+	<script>
+    	function exportProductHTML() {
+        	const form = document.getElementById('productForm');
+        	const formData = new FormData(form);
+
+        	// Collect form data
+        	const product = {};
+        	formData.forEach((value, key) => {
+            	product[key] = value || 'N/A'; // Use 'N/A' as fallback for empty fields
+        	});
+
+        	// Generate HTML for Tile and Expander
+        	const htmlContent = `
+<li>
+	<a href="${product.productBuyLink || '#'}" data-largesrc="${product.productImage || ''}" data-title="${product.productName || 'Unnamed Product'}" data-description="${product.productDescription || 'No description provided.'}">
+    	<div class="tile">
+        	<div class="product-badge">${product.productName || 'Unnamed Product'}</div>
+        	<div class="text-group">
+            	<div class="word subject">${product.rdfSubject || 'No subject'}</div>
+            	<div class="word predicate">${product.rdfPredicate || 'No predicate'}</div>
+            	<div class="word object">${product.rdfObject || 'No object'}</div>
+            	<div class="word type">${product.rdfType || 'No type'}</div>
+            	<div class="word subtype">${product.rdfSubtype || 'No subtype'}</div>
+            	<div class="word relationship">${product.rdfRelationship || 'No relationship'}</div>
+        	</div>
+    	</div>
+	</a>
+</li>`;
+
+        	// Create a Blob and download as HTML
+        	const blob = new Blob([htmlContent], { type: 'text/html' });
+        	const a = document.createElement('a');
+        	a.href = URL.createObjectURL(blob);
+        	a.download = `${(product.productName || 'Unnamed_Product').replace(/ /g, '_')}_record.html`;
+        	a.click();
+    	}
+	</script>
 </body>
 </html>
