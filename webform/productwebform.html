@@ -2,70 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Webform</title>
     <link rel="stylesheet" href="../css/webform.css">
 </head>
 <body>
     <div class="dif-webform-container">
-        <h1 class="dif-webform-title">Create Product Record</h1>
+        <h2 class="dif-webform-title">Product Record Webform</h2>
         <form id="productForm">
-            <!-- Shared Fields -->
-            <div class="form-group">
-                <label for="productName">Product Name</label>
-                <input type="text" id="productName" name="productName" placeholder="e.g., Fender Hot Rod Deluxe" required>
-            </div>
-            <div class="form-group">
-                <label for="productDescription">Product Description</label>
-                <textarea id="productDescription" name="productDescription" placeholder="Brief description of the product"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="productPrice">Product Price</label>
-                <input type="text" id="productPrice" name="productPrice" placeholder="e.g., $799.99">
-            </div>
-            <div class="form-group">
-                <label for="productImage">Upload Image</label>
-                <input type="file" id="productImage" name="productImage" accept="image/*">
-            </div>
-            <div class="form-group">
-                <label for="productBuyLink">Buy Link</label>
-                <input type="url" id="productBuyLink" name="productBuyLink" placeholder="URL to purchase the product">
-            </div>
-
             <!-- Tile Preview Fields -->
-            <h2>Tile Preview Fields</h2>
-            <div class="form-group">
-                <label for="previewSubject">Preview Subject</label>
-                <input type="text" id="previewSubject" name="previewSubject" placeholder="e.g., Tube Guitar Amp">
-            </div>
-            <div class="form-group">
-                <label for="previewPredicate">Preview Predicate</label>
-                <input type="text" id="previewPredicate" name="previewPredicate" placeholder="e.g., Versatile, Robust">
-            </div>
-            <div class="form-group">
-                <label for="previewObject">Preview Object</label>
-                <input type="text" id="previewObject" name="previewObject" placeholder="e.g., Warm tones">
-            </div>
+            <fieldset>
+                <legend>Tile Preview Information</legend>
+                <div class="form-group">
+                    <label for="tileName">Product Name (Tile Preview):</label>
+                    <input type="text" id="tileName" name="tileName" required class="dif-webform-input">
+                </div>
+                <div class="form-group">
+                    <label for="tileSummary">Summary (Short Description for Tile Preview):</label>
+                    <input type="text" id="tileSummary" name="tileSummary" required class="dif-webform-input">
+                </div>
+            </fieldset>
 
             <!-- Expander Content Fields -->
-            <h2>Expander Content Fields</h2>
-            <div class="form-group">
-                <label for="expanderSubject">Expander Subject</label>
-                <input type="text" id="expanderSubject" name="expanderSubject" placeholder="Detailed subject (optional)">
-            </div>
-            <div class="form-group">
-                <label for="expanderPredicate">Expander Predicate</label>
-                <input type="text" id="expanderPredicate" name="expanderPredicate" placeholder="Expanded context (optional)">
-            </div>
-            <div class="form-group">
-                <label for="expanderObject">Expander Object</label>
-                <textarea id="expanderObject" name="expanderObject" placeholder="In-depth details"></textarea>
-            </div>
+            <fieldset>
+                <legend>Expander Content Information</legend>
+                <div class="form-group">
+                    <label for="productName">Full Product Name (Expander):</label>
+                    <input type="text" id="productName" name="productName" required class="dif-webform-input">
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Description:</label>
+                    <textarea id="productDescription" name="productDescription" required class="dif-webform-input"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Price:</label>
+                    <input type="text" id="productPrice" name="productPrice" class="dif-webform-input">
+                </div>
+                <div class="form-group">
+                    <label for="productImage">Product Image URL:</label>
+                    <input type="text" id="productImage" name="productImage" class="dif-webform-input">
+                </div>
+                <div class="form-group">
+                    <label for="productBuyLink">Buy Link:</label>
+                    <input type="text" id="productBuyLink" name="productBuyLink" class="dif-webform-input">
+                </div>
+                <div class="form-group">
+                    <label for="rdfSubject">Subject:</label>
+                    <input type="text" id="rdfSubject" name="rdfSubject" class="dif-webform-input">
+                </div>
+                <div class="form-group">
+                    <label for="rdfPredicate">Predicate:</label>
+                    <input type="text" id="rdfPredicate" name="rdfPredicate" class="dif-webform-input">
+                </div>
+                <div class="form-group">
+                    <label for="rdfObject">Object:</label>
+                    <input type="text" id="rdfObject" name="rdfObject" class="dif-webform-input">
+                </div>
+                <div class="form-group">
+                    <label for="rdfType">Type:</label>
+                    <input type="text" id="rdfType" name="rdfType" class="dif-webform-input">
+                </div>
+                <div class="form-group">
+                    <label for="rdfSubtype">Subtype:</label>
+                    <input type="text" id="rdfSubtype" name="rdfSubtype" class="dif-webform-input">
+                </div>
+                <div class="form-group">
+                    <label for="rdfRelationship">Relationship:</label>
+                    <input type="text" id="rdfRelationship" name="rdfRelationship" class="dif-webform-input">
+                </div>
+            </fieldset>
 
-            <!-- Submit -->
-            <button type="submit" class="dif-webform-submit">Generate HTML</button>
+            <!-- Submit Button -->
+            <button type="button" class="dif-webform-submit" onclick="exportProductHTML()">Generate HTML</button>
         </form>
     </div>
-    <div id="html-output" style="margin-top: 20px; padding: 10px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 4px;"></div>
+
     <script src="../js/product_form_handler.js"></script>
 </body>
 </html>
