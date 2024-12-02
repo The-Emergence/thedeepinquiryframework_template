@@ -10,33 +10,41 @@
     <div class="dif-webform-container">
         <h2 class="dif-webform-title">Create a Product Record</h2>
         <form id="productForm">
-            <!-- Product Name -->
+            <!-- Preview Content Section -->
+            <h3>Preview Content</h3>
+            <div class="form-group">
+                <label for="previewTitle">Preview Title:</label>
+                <input type="text" id="previewTitle" name="previewTitle" class="dif-webform-input" placeholder="Enter a short title for the preview tile." required>
+            </div>
+            <div class="form-group">
+                <label for="previewDescription">Preview Description:</label>
+                <textarea id="previewDescription" name="previewDescription" class="dif-webform-input" placeholder="Enter a brief summary or key details for the preview." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="previewImage">Preview Image:</label>
+                <input type="file" id="previewImage" name="previewImage" accept="image/*" class="dif-webform-input">
+            </div>
+
+            <!-- Expander Content Section -->
+            <h3>Expander Content</h3>
             <div class="form-group">
                 <label for="productName">Product Name:</label>
-                <input type="text" id="productName" name="productName" class="dif-webform-input" placeholder="What is the name of the product?" required>
+                <input type="text" id="productName" name="productName" class="dif-webform-input" placeholder="Enter the full name of the product." required>
             </div>
-
-            <!-- Product Description -->
             <div class="form-group">
                 <label for="productDescription">Product Description:</label>
-                <textarea id="productDescription" name="productDescription" class="dif-webform-input" placeholder="Provide a detailed description of the product's features, purpose, and value." required></textarea>
+                <textarea id="productDescription" name="productDescription" class="dif-webform-input" placeholder="Provide a detailed description of the product." required></textarea>
             </div>
-
-            <!-- Product Price -->
             <div class="form-group">
                 <label for="productPrice">Product Price:</label>
                 <input type="text" id="productPrice" name="productPrice" class="dif-webform-input" placeholder="e.g., $199.99">
             </div>
-
-            <!-- Product Buy Link -->
             <div class="form-group">
                 <label for="productBuyLink">Buy Link:</label>
                 <input type="url" id="productBuyLink" name="productBuyLink" class="dif-webform-input" placeholder="Provide a URL where this product can be purchased.">
             </div>
-
-            <!-- Image Upload -->
             <div class="form-group">
-                <label for="productImage">Product Image:</label>
+                <label for="productImage">Expander Image:</label>
                 <input type="file" id="productImage" name="productImage" accept="image/*" class="dif-webform-input">
             </div>
 
@@ -44,27 +52,27 @@
             <h3>RDF6 Metadata</h3>
             <div class="form-group">
                 <label for="rdfSubject">Subject:</label>
-                <input type="text" id="rdfSubject" name="rdfSubject" class="dif-webform-input" placeholder="What specifically is this product?">
+                <input type="text" id="rdfSubject" name="rdfSubject" class="dif-webform-input" placeholder="Enter the subject of the product.">
             </div>
             <div class="form-group">
                 <label for="rdfPredicate">Predicate:</label>
-                <input type="text" id="rdfPredicate" name="rdfPredicate" class="dif-webform-input" placeholder="What tonal qualities does this amp have a reputation for?">
+                <input type="text" id="rdfPredicate" name="rdfPredicate" class="dif-webform-input" placeholder="Enter the predicate (e.g., key qualities).">
             </div>
             <div class="form-group">
                 <label for="rdfObject">Object:</label>
-                <input type="text" id="rdfObject" name="rdfObject" class="dif-webform-input" placeholder="What sound or tone does it create?">
+                <input type="text" id="rdfObject" name="rdfObject" class="dif-webform-input" placeholder="Enter the object (e.g., resulting tone).">
             </div>
             <div class="form-group">
                 <label for="rdfType">Type:</label>
-                <input type="text" id="rdfType" name="rdfType" class="dif-webform-input" placeholder="What category/type does it belong to?">
+                <input type="text" id="rdfType" name="rdfType" class="dif-webform-input" placeholder="Enter the type or category of the product.">
             </div>
             <div class="form-group">
                 <label for="rdfSubtype">Subtype:</label>
-                <input type="text" id="rdfSubtype" name="rdfSubtype" class="dif-webform-input" placeholder="What genre or style is it best for?">
+                <input type="text" id="rdfSubtype" name="rdfSubtype" class="dif-webform-input" placeholder="Enter the subtype or specific variation.">
             </div>
             <div class="form-group">
                 <label for="rdfRelationship">Relationship:</label>
-                <input type="text" id="rdfRelationship" name="rdfRelationship" class="dif-webform-input" placeholder="What is this product related to?">
+                <input type="text" id="rdfRelationship" name="rdfRelationship" class="dif-webform-input" placeholder="Enter relationships or associated entities.">
             </div>
 
             <!-- Export Button -->
@@ -83,27 +91,15 @@
                 product[key] = value || 'N/A'; // Use 'N/A' as fallback for empty fields
             });
 
-            // Concatenate relevant fields for data-description
-            const descriptionContent = `
-                <strong>${product.productDescription || 'No description provided.'}</strong><br>
-                <strong>Price:</strong> ${product.productPrice || 'Not specified'}<br>
-                <strong>Subject:</strong> ${product.rdfSubject || 'No subject'}<br>
-                <strong>Predicate:</strong> ${product.rdfPredicate || 'No predicate'}<br>
-                <strong>Object:</strong> ${product.rdfObject || 'No object'}<br>
-                <strong>Type:</strong> ${product.rdfType || 'No type'}<br>
-                <strong>Subtype:</strong> ${product.rdfSubtype || 'No subtype'}<br>
-                <strong>Relationship:</strong> ${product.rdfRelationship || 'No relationship'}
-            `.trim();
-
-            // Generate HTML for Tile Preview and Expander
+            // Generate HTML for Tile and Expander
             const htmlContent = `
 <li>
     <a href="${product.productBuyLink || '#'}" 
-       data-largesrc="${product.productImage || ''}" 
-       data-title="${product.productName || 'Unnamed Product'}" 
-       data-description="${descriptionContent}">
+       data-largesrc="${product.previewImage || ''}" 
+       data-title="${product.previewTitle || 'Unnamed Product'}" 
+       data-description="${product.previewDescription || 'No description provided.'}">
         <div class="tile">
-            <div class="product-badge">${product.productName || 'Unnamed Product'}</div>
+            <div class="product-badge">${product.previewTitle || 'Unnamed Product'}</div>
             <div class="text-group">
                 <div class="word subject">${product.rdfSubject || 'No subject'}</div>
                 <div class="word predicate">${product.rdfPredicate || 'No predicate'}</div>
