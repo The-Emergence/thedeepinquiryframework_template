@@ -1,66 +1,121 @@
+indextest.html
+
+11/30/24 11:29 pm
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-    	<meta charset="UTF-8" />
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    	<title>Deep Inquiry Framework Template</title>
-    	<meta name="description" content="Thumbnail Grid with Expanding Preview" />
-    	<meta name="keywords" content="thumbnails, grid, preview, google image search, jquery, image grid, expanding, preview, portfolio" />
-    	<meta name="author" content="Codrops" />
-    	<link rel="shortcut icon" href="../favicon.ico">
-    	<link rel="stylesheet" type="text/css" href="../css/default.css" />
-    	<link rel="stylesheet" type="text/css" href="../css/component.css" />
-		<link rel="stylesheet" type="text/css" href="../css/tile.css" />    
-    	<link rel="stylesheet" href="../css/attractor.css">
-		<link rel="stylesheet" href="../css/expander.css">
-    	<script src="../js/modernizr.custom.js"></script>
-	<script src="../js/grid.js"></script>
-	<script src="../js/imageUploader.js"></script>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Deep Inquiry Framework Template</title>
+	<meta name="description" content="Thumbnail Grid with Expanding Preview" />
+	<meta name="keywords" content="thumbnails, grid, preview, google image search, jquery, image grid, expanding, preview, portfolio" />
+	<meta name="author" content="Codrops" />
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../css/default.css" />
+	<link rel="stylesheet" type="text/css" href="../css/component.css" />
+	<link rel="stylesheet" type="text/css" href="../css/tile.css" />
+	<link rel="stylesheet" href="../css/attractor.css">
+            <link rel="stylesheet" href="../css/expander.css">
+ 	<script src="../js/modernizr.custom.js"></script>
+            <script src="../js/imageUploader.js"></script>
+</head>
+<body>
+	<div class="container">
+    	<!-- Header Section -->
+    	<header class="clearfix">
+        	<h1>Guitar Amps</h1>
+        	<span>
+            	<a href="https://the-emergence.github.io/thedeepinquiryframework_template/webform/productwebform.html" target="_blank">Curate</a> | Participate
+        	</span>
+    	</header>
 
-	</head>
-	<body>
-    	<div class="container">    
-        	<header class="clearfix">
-            <h1>Guitar Amps</h1>
-            	<span><a href="https://the-emergence.github.io/thedeepinquiryframework_template/webform/productwebform.html" target="_blank">Curate</a> | Participate</span>
-                </header>
+    	<!-- Main Tile Grid -->
+    	<div class="main">
+        	<ul id="og-grid" class="og-grid">
 
-		
- 	  	<!-- Main Tile Grid -->
-        	<div class="main">
-            	<ul id="og-grid" class="og-grid">
+            	<!-- PRODUCT 1 BEGIN -->
+            	<li>
+                	<a href="https://www.fender.com/en-US/guitar-amplifiers/contemporary-digital/mustang-gtx100/2310700000.html" data-largesrc="../images/mustang-gtx100.jpg" data-title="Mustang GTX 100" data-description="Mustang GTX is a better, bolder guitar amp with an unprecedented feature set and unbeatable performance. A wide selection of accurate and versatile amp models, dozens of effects and 200 onboard presets give you the guitar tones you need for almost any type of music. Modular signal path flexibility lets you move effects anywhere in the chain, while the crisp full-color display lets you know what's going on under the hood.">
+                    	<div class="tile">
+                        	<div class="product-badge">Guitar Amp</div>
+                        	<div class="text-group">
+                            	<div class="word subject">Fender Guitar Amp</div>
+                            	<div class="word predicate">has tone like</div>
+                            	<div class="word object">Growl</div>
+                            	<div class="word type">Mustang GTX 100</div>
+                            	<div class="word subtype">Blues</div>
+                            	<div class="word relationship">Guitar</div>
+                        	</div>
+                    	</div>
+                	</a>
+            	</li>
+            	<!-- PRODUCT 1 END -->
 
-		<!-- PRODUCT 1 BEGIN -->
-                	
-<li>
-    <a href="https://www.fender.com/en-US/guitar-amplifiers/vintage-pro-tube/hot-rod-deluxe-iv/2231200000.html" data-largesrc="[object File]" data-title="Fender Hot Rod Deluxe Guitar Amplifier" data-description="N/A">
-        <div class="tile">
-            <div class="product-badge">Fender Hot Rod Deluxe Guitar Amplifier</div>
-            <div class="text-group">
-                <div class="word subject">Tube Guitar Amplifier</div>
-                <div class="word predicate">Versatile, Clean, Sparkling, Warm, Balanced, Midrange, Smooth, Grit, Refined, Ambient, Musical, Reliable, Workhorse, Robust, Defined</div>
-                <div class="word object">warm tones</div>
-                <div class="word type">Tube Amplifier</div>
-                <div class="word subtype">12ax7 preamp tubes and 6L6 power tubes</div>
-                <div class="word relationship">Guitarist's who played: John Mayer, Joe Bonamassa, Gary Clark  Jr. </div>
-            </div>
-        </div>
-    </a>
-</li>
-     		<!-- PRODUCT 1 END -->	 
-	
-            	<p>Build on&nbsp<a href="http://www.theemergenc.io/">The Deep Inquiry Framework</a></p>
-			Curated by J. Paul Duplantis
-     	 
+        	</ul>
+        	<p>Build on <a href="http://www.theemergenc.io/">The Deep Inquiry Framework</a></p>
+        	<p>Curated by J. Paul Duplantis</p>
+    	</div>
+	</div><!-- /container -->
+
+	<!-- Expander Window -->
+	<div id="attractor-expander" class="og-expander">
+    	<div class="og-expander-inner">
+        	<!-- Close Button -->
+        	<span class="og-close">✖</span>
+
+        	<!-- Left Section: Product Image -->
+        	<div class="og-left">
+            	<img src="../images/placeholder.jpg" alt="Product Image" class="product-image">
         	</div>
-    	</div><!-- /container -->
-    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    	<script src="../js/grid.js"></script>
-    	<script>
-        	$(function() {
-            	Grid.init();
-        	});
-    	</script>
-	</body>
+
+        	<!-- Right Section: Content -->
+        	<div class="og-right">
+            	<!-- Product Title -->
+            	<h3 class="product-title">Fender Hot Rod Deluxe IV</h3>
+
+            	<!-- RDF6 Details -->
+            	<div class="product-details">
+                	<p><strong>Subject:</strong> Tube Amplifier</p>
+                	<p><strong>Predicate:</strong> Enhances warm, vintage guitar tones</p>
+                	<p><strong>Object:</strong> Deliver professional-grade sound for small gigs</p>
+                	<p><strong>Type:</strong> Guitar Amplifier</p>
+                	<p><strong>Subtype:</strong> Tube Amplifier (Combo)</p>
+                	<p><strong>Relationships:</strong> Related to Fender Stratocaster, Blues Genre, John Mayer.</p>
+            	</div>
+
+            	<!-- Product Link -->
+            	<div class="product-link">
+                	<a href="https://www.fender.com" target="_blank">Visit Product Page</a>
+            	</div>
+
+            	<!-- Share Options -->
+            	<div class="share-options">
+                	<p>Share this product:</p>
+                	<a href="#" class="share-social">Social</a>
+                	<a href="#" class="share-email">Email</a>
+                	<a href="#" class="share-text">Text</a>
+            	</div>
+        	</div>
+    	</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="../js/grid.js"></script>
+	<script>
+    	$(function() {
+        	Grid.init();
+
+        	// Attractor-specific behavior
+        	const expander = $('#attractor-expander');
+        	$('.og-close').on('click', () => expander.removeClass('active'));
+    	});
+	</script>
+</body>
 </html>
+
+
+
