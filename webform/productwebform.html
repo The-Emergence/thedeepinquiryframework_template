@@ -83,10 +83,25 @@
                 product[key] = value || 'N/A'; // Use 'N/A' as fallback for empty fields
             });
 
+            // Concatenate relevant fields for data-description
+            const descriptionContent = `
+                <strong>${product.productDescription || 'No description provided.'}</strong><br>
+                <strong>Price:</strong> ${product.productPrice || 'Not specified'}<br>
+                <strong>Subject:</strong> ${product.rdfSubject || 'No subject'}<br>
+                <strong>Predicate:</strong> ${product.rdfPredicate || 'No predicate'}<br>
+                <strong>Object:</strong> ${product.rdfObject || 'No object'}<br>
+                <strong>Type:</strong> ${product.rdfType || 'No type'}<br>
+                <strong>Subtype:</strong> ${product.rdfSubtype || 'No subtype'}<br>
+                <strong>Relationship:</strong> ${product.rdfRelationship || 'No relationship'}
+            `.trim();
+
             // Generate HTML for Tile Preview and Expander
             const htmlContent = `
 <li>
-    <a href="${product.productBuyLink || '#'}" data-largesrc="${product.productImage || ''}" data-title="${product.productName || 'Unnamed Product'}" data-description="${product.productDescription || 'No description provided.'}">
+    <a href="${product.productBuyLink || '#'}" 
+       data-largesrc="${product.productImage || ''}" 
+       data-title="${product.productName || 'Unnamed Product'}" 
+       data-description="${descriptionContent}">
         <div class="tile">
             <div class="product-badge">${product.productName || 'Unnamed Product'}</div>
             <div class="text-group">
