@@ -80,24 +80,34 @@
         </form>
     </div>
 
-    <script>
-        function exportProductHTML() {
-            const form = document.getElementById('productForm');
-            const formData = new FormData(form);
+ <script>
+    function exportProductHTML() {
+        const form = document.getElementById('productForm');
+        const formData = new FormData(form);
 
-            // Collect form data
-            const product = {};
-            formData.forEach((value, key) => {
-                product[key] = value || 'N/A'; // Use 'N/A' as fallback for empty fields
-            });
+        // Collect form data
+        const product = {};
+        formData.forEach((value, key) => {
+            product[key] = value || 'N/A'; // Use 'N/A' as fallback for empty fields
+        });
 
-            // Generate HTML for Tile and Expander
-            const htmlContent = `
+        // Concatenate RDF6 Fields for data-description
+        const rdf6Metadata = [
+            product.rdfSubject || 'No subject',
+            product.rdfPredicate || 'No predicate',
+            product.rdfObject || 'No object',
+            product.rdfType || 'No type',
+            product.rdfSubtype || 'No subtype',
+            product.rdfRelationship || 'No relationship'
+        ].join(', ');
+
+        // Generate HTML for Tile and Expander
+        const htmlContent = `
 <li>
     <a href="${product.productBuyLink || '#'}" 
        data-largesrc="${product.previewImage || ''}" 
        data-title="${product.previewTitle || 'Unnamed Product'}" 
-       data-description="${product.previewDescription || 'No description provided.'}">
+       data-description="${product.previewDescription || 'No description provided.'} ${rdf6Metadata}">
         <div class="tile">
             <div class="product-badge">${product.previewTitle || 'Unnamed Product'}</div>
             <div class="text-group">
@@ -131,13 +141,14 @@
     </div>
 </li>`;
 
-            // Create a Blob and download as HTML
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = `${(product.productName || 'Unnamed_Product').replace(/ /g, '_')}_record.html`;
-            a.click();
-        }
-    </script>
+        // Create a Blob and download as HTML
+        const blob = new Blob([htmlContent], { type: 'text/html' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `${(product.productName || 'Unnamed_Product').replace(/ /g, '_')}_record.html`;
+        a.click();
+    }
+</script>
+
 </body>
 </html>
