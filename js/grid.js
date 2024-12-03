@@ -401,7 +401,7 @@ update : function( $item ) {
     this.$title.html(eldata.title);
     this.$description.html(`
         <p>${eldata.description}</p>
-        <p><strong>Price:</strong> ${eldata.price}</p>
+        <p><strong>Price2:</strong> ${eldata.price}</p>
         <p><strong>Subject:</strong> ${eldata.rdfsubject}</p>
         <p><strong>Predicate:</strong> ${eldata.rdfpredicate}</p>
         <p><strong>Object:</strong> ${eldata.rdfobject}</p>
