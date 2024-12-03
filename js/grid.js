@@ -398,17 +398,6 @@ update : function( $item ) {
             rdfrelationship : $itemEl.data( 'rdfrelationship' )
         };
 
-    this.$title.html(eldata.title);
-    this.$description.html(`
-        <p>${eldata.description}</p>
-        <p><strong>Price2:</strong> ${eldata.price}</p>
-        <p><strong>Subject:</strong> ${eldata.rdfsubject}</p>
-        <p><strong>Predicate:</strong> ${eldata.rdfpredicate}</p>
-        <p><strong>Object:</strong> ${eldata.rdfobject}</p>
-        <p><strong>Type:</strong> ${eldata.rdftype}</p>
-        <p><strong>Subtype:</strong> ${eldata.rdfsubtype}</p>
-        <p><strong>Relationship:</strong> ${eldata.rdfrelationship}</p>
-    `);
 
     if (settings.showVisitButton === true) {
         this.$href.attr( 'href', eldata.href );
