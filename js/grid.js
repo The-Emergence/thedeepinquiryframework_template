@@ -352,14 +352,6 @@ var Grid = (function() {
         	}
         	this.$details = $( '<div class="og-details"></div>' ).append(detailAppends);
 
-// Inject "Hello World" within the details div
-const helloWorldLink = $(`
-    <p>
-        <a href="https://theemergence.io" target="_blank">Hello World</a>
-    </p>
-`);
-this.$details.append(helloWorldLink);
-
 this.$loading = $( '<div class="og-loading"></div>' );
 		
                 this.$loading = $( '<div class="og-loading"></div>' );
