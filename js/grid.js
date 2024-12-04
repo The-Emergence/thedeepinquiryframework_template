@@ -341,31 +341,34 @@ var Grid = (function() {
 	}
 
 	Preview.prototype = {
-    	create : function() {
-        	// create Preview structure:
-        	this.$title = $( '<h3></h3>' );
-        	this.$description = $( '<p></p>' );
-        	var detailAppends = [this.$title, this.$description];
-        	if (settings.showVisitButton === true) {
-            	this.$href = $( '<a href="#">Order Amp</a>' );
-            	detailAppends.push(this.$href);
-        	}
-        	this.$details = $( '<div class="og-details"></div>' ).append(detailAppends);
 
+create: function() {
+    this.$title = $( '<h3></h3>' );
+    this.$description = $( '<p></p>' );
+    this.$additionalContent = $('<div class="additional-content">Hello World</div>'); // New content
+    
+    var detailAppends = [this.$title, this.$description, this.$additionalContent]; // Include new content
 
-		
-                this.$loading = $( '<div class="og-loading"></div>' );
-        	this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
-        	this.$closePreview = $( '<span class="og-close"></span>' );
-        	this.$previewInner = $( '<div class="og-expander-inner"></div>' ).append( this.$closePreview, this.$fullimage, this.$details );
-        	this.$previewEl = $( '<div class="og-expander"></div>' ).append( this.$previewInner );
-        	// append preview element to the item
-        	this.$item.append( this.getEl() );
-        	// set the transitions for the preview and the item
-        	if( support ) {
-            	this.setTransition();
-        	}
-    	},
+    // Existing "Order Amp" logic
+    if (settings.showVisitButton === true) {
+        this.$href = $( '<a href="#">Order Amp</a>' );
+        detailAppends.push(this.$href); // Push the button to the array
+    }
+
+    this.$details = $('<div class="og-details"></div>').append(detailAppends);
+    this.$loading = $('<div class="og-loading"></div>');
+    this.$fullimage = $('<div class="og-fullimg"></div>').append(this.$loading);
+    this.$closePreview = $('<span class="og-close"></span>');
+    this.$previewInner = $('<div class="og-expander-inner"></div>')
+        .append(this.$closePreview, this.$fullimage, this.$details);
+    this.$previewEl = $('<div class="og-expander"></div>').append(this.$previewInner);
+
+    this.$item.append(this.getEl());
+
+    if (support) {
+        this.setTransition();
+    }
+},
     	update : function( $item ) {
 
         	if( $item ) {
