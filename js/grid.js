@@ -352,8 +352,6 @@ var Grid = (function() {
         	}
         	this.$details = $( '<div class="og-details"></div>' ).append(detailAppends);
 
-this.$details = $( '<div class="og-details"></div>' ).append(detailAppends);
-
 // Inject "Hello World" within the details div
 const helloWorldLink = $(`
     <p>
