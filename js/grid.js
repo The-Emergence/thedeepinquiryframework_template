@@ -351,7 +351,16 @@ var Grid = (function() {
             	detailAppends.push(this.$href);
         	}
         	this.$details = $( '<div class="og-details"></div>' ).append(detailAppends);
-        	this.$loading = $( '<div class="og-loading"></div>' );
+
+// Inject "Hello World" with a link
+this.$helloWorld = $(`
+    <p>
+        <a href="https://theemergence.io" target="_blank">Hello World</a>
+    </p>
+`);
+this.$details.append(this.$helloWorld);
+		
+                this.$loading = $( '<div class="og-loading"></div>' );
         	this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
         	this.$closePreview = $( '<span class="og-close"></span>' );
         	this.$previewInner = $( '<div class="og-expander-inner"></div>' ).append( this.$closePreview, this.$fullimage, this.$details );
