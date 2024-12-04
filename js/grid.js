@@ -341,85 +341,87 @@ var Grid = (function() {
 	}
 
 	Preview.prototype = {
-   
+    	create : function() {
+        	// create Preview structure:
+        	this.$title = $( '<h3></h3>' );
+        	this.$description = $( '<p></p>' );
+        	var detailAppends = [this.$title, this.$description];
+        	if (settings.showVisitButton === true) {
+            	this.$href = $( '<a href="#">Order Amp</a>' );
+            	detailAppends.push(this.$href);
+        	}
+        	this.$details = $( '<div class="og-details"></div>' ).append(detailAppends);
+
+
 		
-		create : function() {
-    this.$title = $( '<h3></h3>' );
-    this.$description = $( '<p></p>' );
-    this.$additionalContent = $( '<div class="additional-content"></div>' ); // New content area
-    var detailAppends = [this.$title, this.$description, this.$additionalContent];
+                this.$loading = $( '<div class="og-loading"></div>' );
+        	this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
+        	this.$closePreview = $( '<span class="og-close"></span>' );
+        	this.$previewInner = $( '<div class="og-expander-inner"></div>' ).append( this.$closePreview, this.$fullimage, this.$details );
+        	this.$previewEl = $( '<div class="og-expander"></div>' ).append( this.$previewInner );
+        	// append preview element to the item
+        	this.$item.append( this.getEl() );
+        	// set the transitions for the preview and the item
+        	if( support ) {
+            	this.setTransition();
+        	}
+    	},
+    	update : function( $item ) {
 
-    this.$details = $( '<div class="og-details"></div>' ).append(detailAppends);
-    this.$loading = $( '<div class="og-loading"></div>' );
-    this.$fullimage = $( '<div class="og-fullimg"></div>' ).append(this.$loading);
-    this.$closePreview = $( '<span class="og-close"></span>' );
-    this.$previewInner = $( '<div class="og-expander-inner"></div>' ).append(this.$closePreview, this.$fullimage, this.$details);
-    this.$previewEl = $( '<div class="og-expander"></div>' ).append(this.$previewInner);
+        	if( $item ) {
+            	this.$item = $item;
+        	}
+       	 
+        	// if already expanded remove class "og-expanded" from current item and add it to new item
+        	if( current !== -1 ) {
+            	var $currentItem = $items.eq( current );
+            	$currentItem.removeClass( 'og-expanded' );
+            	this.$item.addClass( 'og-expanded' );
+            	// position the preview correctly
+            	this.positionPreview();
+        	}
 
-    this.$item.append(this.getEl());
+        	// update current value
+        	current = this.$item.index();
 
-    if (support) {
-        this.setTransition();
-    }
-},
+        	// update preview´s content
+        	var $itemEl = this.$item.children( 'a' ),
+            	eldata = {
+                	href : $itemEl.attr( 'href' ),
+                	largesrc : $itemEl.data( 'largesrc' ),
+                	title : $itemEl.data( 'title' ),
+                	description : $itemEl.data( 'description' )
+            	};
 
-update: function($item) {
-    if ($item) {
-        this.$item = $item;
-    }
+        	this.$title.html( eldata.title );
+        	this.$description.html( eldata.description );
+        	if (settings.showVisitButton === true) {
+            	this.$href.attr( 'href', eldata.href );
+        	}
 
-    // If already expanded, remove "og-expanded" from the current item and add to the new item
-    if (current !== -1) {
-        var $currentItem = $items.eq(current);
-        $currentItem.removeClass('og-expanded');
-        this.$item.addClass('og-expanded');
-        // Position the preview correctly
-        this.positionPreview();
-    }
+        	var self = this;
+       	 
+        	// remove the current image in the preview
+        	if( typeof self.$largeImg != 'undefined' ) {
+            	self.$largeImg.remove();
+        	}
 
-    // Update current value
-    current = this.$item.index();
+        	// preload large image and add it to the preview
+        	// for smaller screens we don´t display the large image (the media query will hide the fullimage wrapper)
+        	if( self.$fullimage.is( ':visible' ) ) {
+            	this.$loading.show();
+            	$( '<img/>' ).load( function() {
+                	var $img = $( this );
+                	if( $img.attr( 'src' ) === self.$item.children('a').data( 'largesrc' ) ) {
+                    	self.$loading.hide();
+                    	self.$fullimage.find( 'img' ).remove();
+                    	self.$largeImg = $img.fadeIn( 350 );
+                    	self.$fullimage.append( self.$largeImg );
+                	}
+            	} ).attr( 'src', eldata.largesrc );    
+        	}
 
-    // Update preview’s content
-    var $itemEl = this.$item.children('a'),
-        eldata = {
-            href: $itemEl.attr('href'),
-            largesrc: $itemEl.data('largesrc'),
-            title: $itemEl.data('title'),
-            description: $itemEl.data('description')
-        };
-
-    this.$title.html(eldata.title);
-    this.$description.html(eldata.description);
-
-    if (settings.showVisitButton === true) {
-        this.$href.attr('href', eldata.href);
-    }
-
-    var self = this;
-
-    // Remove the current image in the preview
-    if (typeof self.$largeImg != 'undefined') {
-        self.$largeImg.remove();
-    }
-
-    // Preload large image and add it to the preview
-    if (self.$fullimage.is(':visible')) {
-        this.$loading.show();
-        $('<img/>')
-            .load(function() {
-                var $img = $(this);
-                if ($img.attr('src') === self.$item.children('a').data('largesrc')) {
-                    self.$loading.hide();
-                    self.$fullimage.find('img').remove();
-                    self.$largeImg = $img.fadeIn(350);
-                    self.$fullimage.append(self.$largeImg);
-                }
-            })
-            .attr('src', eldata.largesrc);
-    }
-},
-
+    	},
     	open : function() {
 
         	setTimeout( $.proxy( function() {    
@@ -521,3 +523,5 @@ update: function($item) {
 	};
 
 })();
+
+
