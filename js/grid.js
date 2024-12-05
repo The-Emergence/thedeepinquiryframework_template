@@ -345,10 +345,9 @@ var Grid = (function() {
 create: function() {
     this.$title = $( '<h3></h3>' );
     this.$description = $( '<p></p>' );
-    this.$additionalContent = $('<div class="additional-content">Hello World</div>'); // New content
-    
-    var detailAppends = [this.$title, this.$description, this.$additionalContent]; // Include new content
-
+ 
+var detailAppends = [this.$title, this.$description];
+	
     // Existing "Order Amp" logic
     if (settings.showVisitButton === true) {
         this.$href = $( '<a href="#">Order Amp</a>' );
@@ -389,13 +388,15 @@ create: function() {
 
         	// update preview´s content
         	var $itemEl = this.$item.children( 'a' ),
-            	eldata = {
-                	href : $itemEl.attr( 'href' ),
-                	largesrc : $itemEl.data( 'largesrc' ),
-                	title : $itemEl.data( 'title' ),
-                	description : $itemEl.data( 'description' )
-            	};
+eldata = {
+    href: $itemEl.attr('href'),
+    largesrc: $itemEl.data('largesrc'),
+    title: $itemEl.data('title'),
+    description: $itemEl.data('description')
+};
 
+
+			
         	this.$title.html( eldata.title );
         	this.$description.html( eldata.description );
         	if (settings.showVisitButton === true) {
