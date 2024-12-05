@@ -198,10 +198,16 @@ var Grid = (function () {
     function getWinSize() {
         winsize = { width: $window.width(), height: $window.height() };
     }
-
+   
     function showPreview($item) {
         var preview = $.data(this, 'preview'),
             position = $item.data('offsetTop');
+
+         // Inject dynamic content before the preview is opened
+    if ($item.attr('id') === 'record001') {
+        console.log('Injecting dynamic content for record001.');
+        injectRecordContent(); // Ensure content is loaded dynamically
+    }
 
         scrollExtra = 0;
 
@@ -361,13 +367,17 @@ var Grid = (function () {
 
             return false;
         },
-        calcHeight: function () {
-            var heightPreview = 400;
-            var itemHeight = 400;
 
-            this.height = heightPreview;
-            this.itemHeight = itemHeight;
-        },
+calcHeight: function () {
+    var contentHeight = this.$previewEl.find('.og-details').outerHeight(true) || settings.minHeight; // Calculate content height
+    this.height = Math.max(contentHeight, settings.minHeight); // Ensure minimum height
+    this.itemHeight = this.height + this.$item.data('height') + marginExpanded;
+    
+    console.log('Calculated Expander Height:', this.height); // Log the calculated height
+},
+
+
+        
         setHeights: function () {
             var self = this,
                 onEndFn = function () {
