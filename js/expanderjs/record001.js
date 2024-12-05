@@ -1,10 +1,4 @@
-console.log("Record Content:", recordContent); // Log the content
-const expander = document.querySelector("#expander-record001");
-console.log("Expander Element:", expander); // Log the expander element
-
-
-
-// Content specific to Record 001
+// Declare and initialize the recordContent object FIRST
 const recordContent = {
   title: "Hello World",
   description: "This is a proof of concept for modular expander content.",
@@ -13,8 +7,15 @@ const recordContent = {
   ]
 };
 
+// Function to inject content into the expander
 function injectRecordContent() {
   const expander = document.querySelector("#expander-record001");
+
+  // Ensure the expander element exists before modifying it
+  if (!expander) {
+    console.error("Expander element not found for record001.");
+    return;
+  }
 
   // Set the title
   expander.querySelector(".title").textContent = recordContent.title;
