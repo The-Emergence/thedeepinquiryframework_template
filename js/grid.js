@@ -349,10 +349,9 @@ create: function() {
 var detailAppends = [this.$title, this.$description];
 	
     // Existing "Order Amp" logic
-    if (settings.showVisitButton === true) {
-        this.$href = $( '<a href="#">Order Amp</a>' );
-        detailAppends.push(this.$href); // Push the button to the array
-    }
+   if (settings.showVisitButton === true) {
+    this.$href.attr('href', eldata.href || '#'); // Dynamically update href
+}
 
     this.$details = $('<div class="og-details"></div>').append(detailAppends);
     this.$loading = $('<div class="og-loading"></div>');
