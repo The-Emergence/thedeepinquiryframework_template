@@ -353,18 +353,21 @@ var Grid = (function () {
 
             return false;
         },
-        calcHeight: function () {
-            var heightPreview = winsize.height - this.$item.data('height') - marginExpanded,
-                itemHeight = winsize.height;
 
-            if (heightPreview < settings.minHeight) {
-                heightPreview = settings.minHeight;
-                itemHeight = settings.minHeight + this.$item.data('height') + marginExpanded;
-            }
+calcHeight: function () {
+    var heightPreview = 400; // Fixed height in pixels
+    var itemHeight = 400; // Fixed item height in pixels
 
-            this.height = heightPreview;
-            this.itemHeight = itemHeight;
-        },
+    // Alternatively, enforce minimum height logic if needed
+    // heightPreview = Math.max(heightPreview, 300);
+
+    this.height = heightPreview;
+    this.itemHeight = itemHeight;
+},
+
+
+        
+        
         setHeights: function () {
             var self = this,
                 onEndFn = function () {
