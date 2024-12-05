@@ -35,23 +35,7 @@
 	margin: -20px 0 0 -15px;
 }
 
-.og-expander {
-    position: absolute;
-    background: #ddd;
-    top: auto;
-    left: 0;
-    width: 100%;
-    margin-top: 10px;
-    text-align: left;
-    height: 0; /* Start with height 0 for the closed state */
-    overflow-y: hidden; /* Hide content when closed */
-    transition: height 0.35s ease; /* Smooth transition for height changes */
-}
 
-.og-expanded .og-expander {
-    height: 400px; /* Fixed height when expanded */
-    overflow-y: auto; /* Enable scrolling for content */
-}
 
 .og-expander-inner {
 	padding: 50px 30px;
@@ -67,7 +51,18 @@
 	cursor: pointer;
 }
 
-.og-close::before,
+.og-close::before,.og-expander {
+    position: absolute;
+    background: #ddd;
+    top: auto;
+    left: 0;
+    width: 100%;
+    margin-top: 10px;
+    text-align: left;
+    height: 0; /* Original value */
+    overflow: hidden; /* Ensures content doesn't leak out */
+}
+
 .og-close::after {
 	content: '';
 	position: absolute;
