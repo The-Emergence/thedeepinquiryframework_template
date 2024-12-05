@@ -43,11 +43,15 @@
     width: 100%;
     margin-top: 10px;
     text-align: left;
-    height: 400px; /* Fixed height */
-    overflow-y: auto; /* Allow scrolling for content that exceeds height */
-    transition: height 0.35s ease; /* Smooth transition for opening/closing */
+    height: 0; /* Start with height 0 for the closed state */
+    overflow-y: hidden; /* Hide content when closed */
+    transition: height 0.35s ease; /* Smooth transition for height changes */
 }
 
+.og-expanded .og-expander {
+    height: 400px; /* Fixed height when expanded */
+    overflow-y: auto; /* Enable scrolling for content */
+}
 
 .og-expander-inner {
 	padding: 50px 30px;
