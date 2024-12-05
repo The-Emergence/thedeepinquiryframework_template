@@ -285,7 +285,7 @@ var Grid = (function () {
                     description: $itemEl.data('description') || 'No Description Available',
                 };
 
-            console.log('eldata:', eldata);
+    console.log("eldata in grid.js:", eldata);
 
             this.$title.html(eldata.title);
             this.$description.html(eldata.description);
