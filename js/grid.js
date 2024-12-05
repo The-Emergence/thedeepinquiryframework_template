@@ -109,6 +109,7 @@ $.fn.imagesLoaded = function (callback) {
 };
 
 // Grid Component
+
 var Grid = (function () {
     var $selector = '#og-grid',
         $grid = $($selector),
@@ -204,6 +205,8 @@ var Grid = (function () {
 
         scrollExtra = 0;
 
+        console.log('Expander height before opening:', this.height);
+
         if (typeof preview != 'undefined') {
             if (previewPos !== position) {
                 if (position > previewPos) {
@@ -218,7 +221,12 @@ var Grid = (function () {
 
         previewPos = position;
         preview = $.data(this, 'preview', new Preview($item));
+
+        console.log('Expander content before opening:', preview.getEl().html());
+
         preview.open();
+
+        console.log('Expander height after opening:', preview.getEl().css('height'));
     }
 
     function hidePreview() {
@@ -285,7 +293,7 @@ var Grid = (function () {
                     description: $itemEl.data('description') || 'No Description Available',
                 };
 
-    console.log("eldata in grid.js:", eldata);
+            console.log('eldata in update:', eldata);
 
             this.$title.html(eldata.title);
             this.$description.html(eldata.description);
@@ -353,21 +361,13 @@ var Grid = (function () {
 
             return false;
         },
+        calcHeight: function () {
+            var heightPreview = 400;
+            var itemHeight = 400;
 
-calcHeight: function () {
-    var heightPreview = 400; // Fixed height in pixels
-    var itemHeight = 400; // Fixed item height in pixels
-
-    // Alternatively, enforce minimum height logic if needed
-    // heightPreview = Math.max(heightPreview, 300);
-
-    this.height = heightPreview;
-    this.itemHeight = itemHeight;
-},
-
-
-        
-        
+            this.height = heightPreview;
+            this.itemHeight = itemHeight;
+        },
         setHeights: function () {
             var self = this,
                 onEndFn = function () {
