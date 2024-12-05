@@ -36,3 +36,6 @@ function injectRecordContent() {
 
 // Inject content after the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", injectRecordContent);
+
+console.log("Expander Title:", recordContent.title);
+console.log("Expander Description:", recordContent.description);
