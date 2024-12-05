@@ -1,3 +1,9 @@
+console.log("Record Content:", recordContent); // Log the content
+const expander = document.querySelector("#expander-record001");
+console.log("Expander Element:", expander); // Log the expander element
+
+
+
 // Content specific to Record 001
 const recordContent = {
   title: "Hello World",
