@@ -394,7 +394,8 @@ eldata = {
     description: $itemEl.data('description')
 };
 
-
+// Log the eldata object to verify its contents
+    console.log("eldata:", eldata);
 			
         	this.$title.html( eldata.title );
         	this.$description.html( eldata.description );
