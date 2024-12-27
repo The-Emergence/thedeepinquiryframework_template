@@ -1,4 +1,4 @@
-// Supabase Configuration
+// Supabase Configuration to pull data dynamically into DIF
 const SUPABASE_URL = "https://qednuirrccgrlcqrszmb.supabase.co";
 const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
 
